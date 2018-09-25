@@ -1,0 +1,23 @@
+baseURL = "https://lowentropy.me/"
+languageCode = "zh_CN"
+title = "LowEntropy"
+theme = "LE-base16"
+
+hasCJKLanguage = true
+
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+enableEmoji = true
+
+[params]
+  AuthorName = "Ray Wong"
+  GitHubUser = "jinxiapu"
+  
+  Subtitle = "Bring Order to Chaos."
+
+[permalinks]
+blog = "/blog/:year:month:day-:title/"
+
+[blackfriday]
+  hrefTargetBlank = true

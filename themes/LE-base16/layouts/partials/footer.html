@@ -1,0 +1,29 @@
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; {{ .Site.LastChange.Year }} {{ .Site.Params.AuthorName }} - <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></span>
+  </div>
+</footer>
+{{ if .IsPage }}
+<script data-isso="https://comments.lowentropy.me/" data-isso-css="true" data-isso-lang="zh_CN" data-isso-reply-to-self="false"
+    data-isso-require-author="true" data-isso-require-email="true" data-isso-vote="true" data-vote-levels="" src="https://comments.lowentropy.me/js/embed.min.js"></script>
+{{ end }}
+    
+<!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
+<script>
+  (function(f, a, t, h, o, m){
+    a[h]=a[h]||function(){
+      (a[h].q=a[h].q||[]).push(arguments)
+    };
+    o=f.createElement('script'),
+    m=f.getElementsByTagName('script')[0];
+    o.async=1; o.src=t; o.id='fathom-script';
+    m.parentNode.insertBefore(o,m)
+  })(document, window, 'https://stat.lowentropy.me/tracker.js', 'fathom');
+  fathom('trackPageview');
+  </script>
+  <!-- / Fathom -->
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    {{ if .Site.Params.description }}<meta name="description" content="{{ .Site.Params.description }}">{{ end }}
+    
+    {{ if .Site.Params.twitter }}
+        <meta property="twitter:site" content="@{{.Site.Params.twitter}}">
+    {{ end }}
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:locale" content="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="twitter:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
+    {{ if .Site.Params.social_banner }}
+        <meta property="og:image" content="{{ if .Params.meta_img }}{{ .Site.BaseURL }}{{ .Params.meta_img }}{{ else }}{{ .Site.BaseURL }}{{.Site.Params.social_banner}}{{ end }}">
+        <meta property="twitter:card" content="{{ if .Site.Params.usesmallsummarycard }}summary{{ else }}summary_large_image{{ end }}">
+        <meta property="twitter:image" content="{{ if .Params.meta_img }}{{ .Site.BaseURL }}{{ .Params.meta_img }}{{ else }}{{ .Site.BaseURL }}{{.Site.Params.social_banner}}{{ end }}">
+    {{ else }}
+        <meta property="twitter:card" content="summary">
+    {{ end }}
+    <meta property="og:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else if .IsPage }}{{ .Description }}{{ end }}">
+    <meta property="twitter:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else if .IsPage }}{{ .Description }}{{ end }}">
+{{- with $.Param "keywords" }}
+<meta name="keywords" content="{{ delimit . "," }}">
+{{- end }}
+
+<meta name="author" content="{{ $.Site.Params.AuthorName }}">
+{{ .Hugo.Generator }}
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="shortcut icon" href="/favicon.png">
+
+
+<style media="screen">
+  {{ partial "css/fonts.css" . | safeCSS }}
+  {{ partial "css/main.css" . | safeCSS }}
+</style>
+<style media="(max-width: 52em)">
+  {{ partial "css/max52em.css" . | safeCSS }}
+</style>
+
+{{ if .IsHome }}
+<style type="text/css" media="screen">
+    {{ partial "css/homepage.css" . | safeCSS }}
+</style>
+{{ end }}
+
+{{ if .IsPage }}
+<style type="text/css" media="screen">
+    {{ partial "css/single.css" . | safeCSS }}
+    {{ partial "css/highlight.css" . | safeCSS }}
+</style>
+{{ end }}
+
+
+<link rel="alternate" href="{{ "index.xml" | relURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
+<title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}</title>
+</head>
+<body>
+
+<header>
+  <div class="container clearfix">
+    <a class="path" href="{{ .Site.BaseURL }}">[{{ .Site.Title }}]</a>
+    <span class="caret"># _</span>
+    <div class="right">
+      {{ range $i, $page := (where .Site.RegularPages "Section" "" ) }}
+        {{ if not (eq $i 0) }}|{{ end }}
+        <a class="path" href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+      {{ end }}
+    </div>
+  </div>
+</header>
+
+<div class="container">

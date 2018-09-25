@@ -1,0 +1,186 @@
+/* Base16 Eighties Colorscheme by Chris Kempson (http://chriskempson.com) */
+
+:root {
+  --base00: #2d2d2d;
+  --base01: #393939;
+  --base02: #515151;
+  --base03: #747369;
+  --base04: #a09f93;
+  --base05: #d3d0c8;
+  --base06: #e8e6df;
+  --base07: #f2f0ec;
+  --base08: #f2777a;
+  --base09: #f99157;
+  --base0a: #ffcc66;
+  --base0b: #99cc99;
+  --base0c: #66cccc;
+  --base0d: #6699cc;
+  --base0e: #cc99cc;
+  --base0f: #d27b53;
+}
+
+.base00 { color: var(--base00); }
+.base01 { color: var(--base01); }
+.base02 { color: var(--base02); }
+.base03 { color: var(--base03); }
+.base04 { color: var(--base04); }
+.base05 { color: var(--base05); }
+.base06 { color: var(--base06); }
+.base07 { color: var(--base07); }
+.base08 { color: var(--base08); }
+.base09 { color: var(--base09); }
+.base0a { color: var(--base0a); }
+.base0b { color: var(--base0b); }
+.base0c { color: var(--base0c); }
+.base0d { color: var(--base0d); }
+.base0e { color: var(--base0e); }
+.base0f { color: var(--base0f); }
+
+
+/* General Page Layout */
+
+body {
+  margin: 0;
+  background-color: var(--base00);
+  color: var(--base07);
+  line-height: 1.5;
+  font-size: 100%;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.container {
+  max-width: 52em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.right {
+  float:right;
+}
+
+div.clearfix {
+  overflow: auto;
+}
+
+article.single section,
+.article-list article {
+  background-color: var(--base07);
+  color: var(--base00);
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+header, footer {
+  background-color: var(--base01);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+header {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+
+footer {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.9em;
+  color: var(--base03);
+}
+
+
+/* Typography */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  line-height: 1.25;
+  margin-top: 1em;
+  margin-bottom: .5em;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2rem }
+h2 { font-size: 1.5rem }
+h3 { font-size: 1.25rem }
+h4 { font-size: 1rem }
+h5 { font-size: .875rem }
+h6 { font-size: .75rem }
+
+pre, code {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Header Layout */
+
+header a.path {
+  color: var(--base0d);
+}
+
+header span.caret {
+  color: var(--base07);
+}
+
+/* Footer Layout */
+
+footer a {
+  color: var(--base03);
+  text-decoration: none;
+}
+
+/* 404 Page Layout */
+
+.page-not-found h1 {
+  text-align: center;
+  font-size: 5em;
+}
+
+.page-not-found h2 {
+  text-align: center;
+  font-size: 3em;
+  color: var(--base04);
+  margin-bottom: 4rem;
+}
+
+/* Post List Layout */
+
+.article-list h1.list-title {
+  font-size: 3em;
+  color: var(--base0a);
+}
+
+.article-list article {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  margin-bottom: 4rem;
+}
+
+.article-list article h2.headline,
+.article-list article h2.headline a {
+  margin-top: 0;
+  color: var(--base0d);
+}
+
+.article-list article .meta {
+  margin-bottom: 1rem;
+}
+
+.article-list article .meta .key {
+  color: var(--base03);
+}
+
+.article-list article .meta .val,
+.article-list article .meta .val a {
+  color: var(--base0e);
+}
+
+.article-list article section.summary a { color: var(--base0f); }
