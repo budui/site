@@ -39,9 +39,6 @@
   {{ partial "css/fonts.css" . | safeCSS }}
   {{ partial "css/main.css" . | safeCSS }}
 </style>
-<style media="(max-width: 52em)">
-  {{ partial "css/max52em.css" . | safeCSS }}
-</style>
 
 {{ if .IsHome }}
 <style type="text/css" media="screen">
@@ -55,7 +52,9 @@
     {{ partial "css/highlight.css" . | safeCSS }}
 </style>
 {{ end }}
-
+<style type="text/css" media="(max-width: 52em)">
+  {{ partial "css/max52em.css" . | safeCSS }}
+</style>
 
 <link rel="alternate" href="{{ "index.xml" | relURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
 <title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}</title>
