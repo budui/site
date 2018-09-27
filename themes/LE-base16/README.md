@@ -1,0 +1,1 @@
+This theme was ported from [hugo-base16-theme](https://github.com/htdvisser/hugo-base16-theme).
