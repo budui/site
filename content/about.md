@@ -11,11 +11,11 @@ title: "ABOUT"
 
 喜欢创造，但苦于创造力还很弱。喜欢使用 **Python**, **C/C++**, **Golang** 折腾一些方便自己的东西，美其名曰: 提高生产力。
 
-喜欢规整的东西，喜欢规整的过程。技术兴趣所在：图像处理, 后端开发。
+喜欢规整的东西，喜欢规整的过程。技术兴趣所在：视频处理(AI), 后端开发(Cloud)。
 
 Github: [@jinxiapu](https://github.com/jinxiapu/)
 
-Email: me(at)jinxiapu.cn
+Email: i(at)lowentropy.me
 
 ## 关于本站
 
@@ -23,12 +23,11 @@ Email: me(at)jinxiapu.cn
 
 ---
 
-Host 于 [Netlify](https://www.netlify.com/) (Build, deploy, and manage
-modern web projects)
+Host 于 [Netlify](https://www.netlify.com/)
 
 图床, CDN 来自于 [腾讯云](https://www.qcloud.com)
 
-评论是自建的[isso](https://posativ.org/isso/) 服务
+评论是自建的[isso](https://posativ.org/isso/)服务 - 目前正在写`go-isso`以取代isso。
 
 ---
 
