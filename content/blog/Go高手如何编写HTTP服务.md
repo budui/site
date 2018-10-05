@@ -10,7 +10,7 @@ tags:
 description: 翻译《How I write Go HTTP services after seven years》
 ---
 
-> 本文翻译自[Mat Ryer](http://matryer.com/)的博文：[How I write Go HTTP services after seven years](https://medium.com/statuscode/how-i-write-go-http-services-after-seven-years-37c208122831). 有足够英语阅读能力的读者请直接阅读原文。
+> 本文翻译自[Mat Ryer](http://matryer.com/)的博文：[How I write Go HTTP services after seven years](https://medium.com/statuscode/how-i-write-go-http-services-after-seven-years-37c208122831). 有足够英语阅读能力的读者请直接阅读原文。看完后可以再看下本文最后的补充部分。
 
 我一直在改进我写HTTP服务的方法，在写了7年Go程序后，我是怎么设计Go Web后端程序的呢？
 
@@ -197,3 +197,45 @@ func (s *server) handleTemplate(files string...) http.HandlerFunc {
 2. 如果这个API没有被访问，`init.Do()`中的代码就永远不会被运行——很显然这在初始化代价很大时很有好处。
 
 > 不过，你要明白的是，这种用法是将程序启动时要运行的代码转移到runtime运行（API被第一次访问时）。我经常部署代码到Google App Engine，所以我有这种需求。你需要认真考虑下你是否也有同样的需求，根据自己的运行环境来选择是否使用`sync.Once`。
+
+## 补充[非翻译]
+
+我在下面补充一些从其它地方看到的不错的GO Web实践
+
+### 数据库用Interface而非*sql.DB
+
+为了方便测试，可以不直接把*sql.DB作为server的一项，而用实现了所有必要方法的Interface替代。这样作测试时可以用map或者其它什么内存数据库之类的东西替换底层数据库，跳过数据库对其它部分做测试。
+
+比如：
+
+```golang
+// Database 实现了所有增查删改方法
+type Database interface {
+    AllBooks() ([]*Book, error)
+}
+
+// DB 中可以再加一些如同步锁，计数器以防止spam之类的字段
+type DB struct {
+    *sql.DB
+}
+// AllBooks 是所有增查删改方法的一个代表
+func (db *DB) AllBooks() ([]*Book, error) {
+    rows, err := db.Query("SELECE ...")
+    ...
+}
+```
+
+以上代码为了越过DB作测试，可以实现一个MockDB
+
+```golang
+type mockDB struct{}
+
+func (mdb *mockDB) AllBooks() ([]*Book, error) {
+    bks := make([]*Book, 0)
+    bks = append(bks, &Book{ ... })
+    bks = append(bks, &Book{ ... })
+    return bks, nil
+}
+```
+
+在MockDB中直接返回假数据，很方便测试了。
