@@ -5,13 +5,9 @@ title: "ABOUT"
 
 ## 关于我
 
-常用 id : *jinxiapu*, 其为我名字的一个映射。这个 id 来自于朋友的调侃，习惯以后就成了我的常用 id。:joy:
-
 目前还是一个学生。在这个地方-> **School of Automation, HUST**。
 
-喜欢创造，但苦于创造力还很弱。喜欢使用 **Python**, **C/C++**, **Golang** 折腾一些方便自己的东西，美其名曰: 提高生产力。
-
-喜欢规整的东西，喜欢规整的过程。技术兴趣所在：视频处理(AI), 后端开发(Cloud)。
+说来惭愧，折腾几年，竟无擅长。只入了后端的门，以后估计会了解点Re-ID。
 
 Github: [@jinxiapu](https://github.com/jinxiapu/)
 
@@ -27,7 +23,7 @@ Host 于 [Netlify](https://www.netlify.com/)
 
 图床, CDN 来自于 [腾讯云](https://www.qcloud.com)
 
-评论是自建的[isso](https://posativ.org/isso/)服务 - 目前正在写`go-isso`以取代isso。
+评论是自建的[isso](https://posativ.org/isso/) - 目前正在写`go-isso`以取代isso。
 
 ---
 
