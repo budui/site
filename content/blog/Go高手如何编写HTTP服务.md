@@ -1,5 +1,5 @@
 ---
-title: "Go语言老手如何组织后台程序？"
+title: "GO Web后端项目如何组织？"
 date: 2018-10-03T15:36:29+08:00
 categories:
 - 技术
@@ -7,7 +7,7 @@ categories:
 tags:
 - Golang
 - Web
-description: 翻译《How I write Go HTTP services after seven years》
+description: Go很适合写一下中小型的API服务，那么一个非hello-world型的web API项目应当如何组织？翻译《How I write Go HTTP services after seven years》
 ---
 
 > 本文翻译自[Mat Ryer](http://matryer.com/)的博文：[How I write Go HTTP services after seven years](https://medium.com/statuscode/how-i-write-go-http-services-after-seven-years-37c208122831). 有足够英语阅读能力的读者请直接阅读原文。看完后可以再看下本文最后的补充部分。
