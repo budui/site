@@ -19,7 +19,7 @@ Host 于 [Netlify](https://www.netlify.com/)
 
 图床, CDN 来自于 [腾讯云](https://www.qcloud.com)
 
-评论是自建的[isso](https://posativ.org/isso/) - 目前正在写`go-isso`以取代isso。
+评论是自建的[isso](https://posativ.org/isso/) - 目前正在写[go-isso](https://github.com/jinxiapu/go-isso)以取代isso。
 
 ## 关于我
 
