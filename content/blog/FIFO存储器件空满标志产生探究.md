@@ -5,7 +5,7 @@ categories:
 - 技术
 tags:
 - 硬件
-- 不知
+- 思而罔
 description: 异步FIFO可以在两个不同时钟系统之间快速而方便地传输实时数据, 那么异步FIFO最关键的空满标志是如何产生的呢?
 thumbnail: https://lowentropy.jinxiapu.cn/img/blog/1/fpga.jpg
 ---
