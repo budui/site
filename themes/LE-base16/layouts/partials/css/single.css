@@ -56,9 +56,9 @@ article.single .meta {
   
   article.single p code {
     /* padding: 0.2em 0.5em; */
-    border-radius: 2px;
-    background: var(--base04);
-    color: var(--base07);
+    border-radius: 4px;
+    background: var(--base05);
+    color: var(--base02);
   }
   
   article.single figure, article.single div.highlight {
