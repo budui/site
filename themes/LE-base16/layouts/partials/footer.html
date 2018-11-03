@@ -5,8 +5,7 @@
     <span class="copyright">&copy; {{ .Site.LastChange.Year }} {{ .Site.Params.AuthorName }} - <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></span>
   </div>
 </footer>
-{{ if .IsPage }}
-{{ if .Params.comment | default true }}
+{{ if (and .IsPage .Params.comment | default true)}}
 <script data-isso="https://comments.lowentropy.me/" 
   data-isso-css="true"
   data-isso-lang="zh_CN" 
@@ -16,7 +15,6 @@
   data-isso-require-email="true"
   data-isso-vote="true" 
   data-vote-levels="" src="https://comments.lowentropy.me/js/embed.min.js"></script>
-{{ end }}
 {{ end }}
     
 <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
