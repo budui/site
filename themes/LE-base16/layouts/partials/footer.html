@@ -6,6 +6,7 @@
   </div>
 </footer>
 {{ if .IsPage }}
+{{ if .Params.comment | default true }}
 <script data-isso="https://comments.lowentropy.me/" 
   data-isso-css="true"
   data-isso-lang="zh_CN" 
@@ -15,6 +16,7 @@
   data-isso-require-email="true"
   data-isso-vote="true" 
   data-vote-levels="" src="https://comments.lowentropy.me/js/embed.min.js"></script>
+{{ end }}
 {{ end }}
     
 <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
