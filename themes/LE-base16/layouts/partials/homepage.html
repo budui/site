@@ -1,4 +1,3 @@
-{{ $baseurl := .Site.BaseURL }}
 <main role="main" class="homepage">
 
   {{ partial "hero.html" . }}
@@ -34,7 +33,7 @@
   <section class="categories">
     {{ range $name, $value := . }}
     <h2 class="category">
-      <a href="{{ $baseurl }}categories/{{ $name | urlize }}">{{ title $name }}</a>
+      <a href="/categories/{{ $name | urlize }}">{{ title $name }}</a>
       <small>({{ .Count }})</small>
     </h2>
     {{ end }}
@@ -49,7 +48,7 @@
   <section class="tags">
     {{ range $name, $value := . }}
     <span class="tag">
-      <a href="{{ $baseurl }}tags/{{ $name | urlize }}">{{ $name }}</a>
+      <a href="/tags/{{ $name | urlize }}">{{ $name }}</a>
       <small>({{ .Count }})</small>
     </span>
     {{ end }}
