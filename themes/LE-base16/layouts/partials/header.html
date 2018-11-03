@@ -37,6 +37,8 @@
 <title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}</title>
 
 {{ partial "header_style.html" . }}
+{{ partial "menu_toggle.html" . }}
+
 </head>
 <body>
 
@@ -45,10 +47,26 @@
     <a class="path" href="{{ .Site.BaseURL }}">[{{ .Site.Title }}]</a>
     <span class="caret"># _</span>
     <div class="right">
-      {{ range $i, $page := (where .Site.RegularPages "Section" "" ) }}
-        {{ if not (eq $i 0) }}|{{ end }}
-        <a class="path" href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
-      {{ end }}
+      <div class="menu-pc">
+          <a class="path" href="/blog/">ARCHIVE</a>
+        {{ range $i, $page := (where .Site.RegularPages "Section" "" ) }}
+          |
+          <a class="path" href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+        {{ end }}
+      </div>
+      <div class="menu-mobie">
+        <a class="path" id="hidden-menu-toggle-button" 
+        href="javascript:toggledisplay('hidden-menu','hidden-menu-toggle-button');">MORE</a>
+      </div>
+    </div>
+  </div>
+  <div id="hidden-menu" style="display: none;">
+    <div style="text-align:right;margin-top:12px">
+        <a class="path" href="/blog/">ARCHIVE</a>
+        {{ range $i, $page := (where .Site.RegularPages "Section" "" ) }}
+          |
+          <a class="path" href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+        {{ end }}
     </div>
   </div>
 </header>
