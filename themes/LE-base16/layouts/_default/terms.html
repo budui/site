@@ -1,0 +1,29 @@
+{{ partial "header.html" . }}
+<main role="main" class="article">
+    <article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+        <h1 class="headline" itemprop="headline">{{ .Title }}</h1>
+        <section class="body" itemprop="articleBody">
+            <table>
+                <thead>
+                    <tr>
+                        <th align="left">Taxonomies</th>
+                        <th align="left">Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{ $type := .Type }}
+                {{ range $key, $value := .Data.Terms.ByCount }}
+                    {{ $name := .Name }}
+                    {{ $count := .Count }}
+                    {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}                                
+                        <tr><td align="left"><a href="{{ .Permalink }}">{{ $name }}</a></td>
+                            <td align="left">{{ $count }}</td></tr>
+                    {{ end }}
+                {{ end }}
+                </tbody>
+            </table>
+        </section>
+    </article>
+</main>         
+
+{{ partial "footer.html" . }}              
