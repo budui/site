@@ -9,7 +9,7 @@
 {{ $menu := resources.Get "css/menu.css" }}
 
 {{- $style := slice $homepage $main $max52em $single $fonts  $highlight $menu | resources.Concat "/css/style.css" | minify | fingerprint -}}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
     <script>
         function toggledisplay(elementID, buttonID)
         {
