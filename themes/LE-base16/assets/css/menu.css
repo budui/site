@@ -1,0 +1,13 @@
+@media (max-width: 52em) {
+    div.menu-pc {
+        display: none 
+    }
+    div.menu-mobie {
+        display: inherit
+    }
+}
+@media (min-width: 52em) {
+    div.menu-mobie {
+        display: none 
+    }
+}

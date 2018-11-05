@@ -1,36 +1,15 @@
-    {{ if .IsHome }}
-    <style type="text/css" media="screen">
-        {{ partial "css/homepage.css" . | safeCSS }}
-    </style>
-    {{ end }}
-    
-    {{ if .IsPage }}
-    <style type="text/css" media="screen">
-        {{ partial "css/highlight.css" . | safeCSS }}
-    </style>
-    {{ end }}
+{{ $main := resources.Get "css/main.css" }}
+{{ $max52em := resources.Get "css/max52em.css" }}
+{{ $single := resources.Get "css/single.css" }}
+{{ $fonts := resources.Get "css/fonts.css" }}
 
-    <style type="text/css" media="screen">
-        {{ partial "css/single.css" . | safeCSS }}
-        {{ partial "css/fonts.css" . | safeCSS }}
-        {{ partial "css/main.css" . | safeCSS }}
-    </style>
-    
-    
-    <style type="text/css" media="(max-width: 52em)">
-        {{ partial "css/max52em.css" . | safeCSS }}
-        div.menu-pc {
-            display: none 
-        }
-        div.menu-mobie {
-            display: inherit
-        }
-    </style>
-    <style type="text/css" media="(min-width: 52em)">
-        div.menu-mobie {
-            display: none 
-        }
-    </style>  
+{{ $homepage := resources.Get "css/homepage.css" }}
+{{ $highlight := resources.Get "css/highlight.css" }}
+
+{{ $menu := resources.Get "css/menu.css" }}
+
+{{- $style := slice $homepage $main $max52em $single $fonts  $highlight $menu | resources.Concat "/css/style.css" | minify | fingerprint -}}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
     <script>
         function toggledisplay(elementID, buttonID)
         {
