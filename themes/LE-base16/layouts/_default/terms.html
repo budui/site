@@ -1,4 +1,4 @@
-{{ partial "header.html" . }}
+{{ define "content" -}}
 <main role="main" class="article">
     <article class="single" itemscope itemtype="http://schema.org/BlogPosting">
         <h1 class="headline" itemprop="headline">{{ .Title }}</h1>
@@ -26,4 +26,4 @@
     </article>
 </main>         
 
-{{ partial "footer.html" . }}              
+{{- end }}           
