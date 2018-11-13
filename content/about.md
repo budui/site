@@ -13,19 +13,27 @@ title: "ABOUT"
 
 ## About me
 
-|  ID   |                   GitHub                  |        Email       |
-|-------|:------------------------------------------|:-------------------|
+| ID    | GitHub                                    | Email              |
+| ----- | :---------------------------------------- | :----------------- |
 | RayHY | [@jinxiapu](https://github.com/jinxiapu/) | i(at)lowentropy.me |
 
 ## About underlying technology
 
-|       Component       |                           With                                    |
-|:----------------------|:------------------------------------------------------------------|
-| Static Site Generator |  [Hugo](https://gohugo.io/)                                       |
-|         Theme         |  Hacked [base16](https://github.com/htdvisser/hugo-base16-theme)  |
-|          Host         |  [Netlify](https://www.netlify.com/)                              |
-|          CDN          |  [Tencent Cloud](https://cloud.tencent.com/)                      |
-|     Comment System    |  [isso](https://posativ.org/isso/)                                |
+| Component             | With                                                            |
+| :-------------------- | :-------------------------------------------------------------- |
+| Static Site Generator | [Hugo](https://gohugo.io/)                                      |
+| Theme                 | Hacked [base16](https://github.com/htdvisser/hugo-base16-theme) |
+| Host                  | [Netlify](https://www.netlify.com/)                             |
+| CDN                   | [Tencent Cloud](https://cloud.tencent.com/)                     |
+| Comment System        | [isso](https://posativ.org/isso/)                               |
+
+## About friends
+
+| Who | Link                                 | Desc |
+| --- | ------------------------------------ | ---- |
+| zmy | [zmy的小窝](https://blog.zmyme.com/) | 好友 |
+
+本站只有友情链接，先友后链。**网络一线牵，珍惜这段缘。**
 
 ## About license
 

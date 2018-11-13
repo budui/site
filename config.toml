@@ -1,5 +1,5 @@
 baseURL = "https://lowentropy.me/"
-languageCode = "zh_CN"
+languageCode = "zh-CN"
 title = "LowEntropy"
 theme = "LE-base16"
 
@@ -8,16 +8,34 @@ hasCJKLanguage = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 
+footnotereturnlinkcontents = "↩"
+
 enableEmoji = true
+
+[[menu.main]]
+    name = "ARCHIVE"
+    url = "/blog/"
+    weight = 1
+[[menu.main]]
+    name = "ABOUT"
+    url = "/about/"
+    weight = 4
+[[menu.main]]
+    name = "FR"
+    url = "/flight-rules/"
+    weight = 2
+
 
 [params]
   AuthorName = "Ray Wong"
   GitHubUser = "jinxiapu"
-  
   Subtitle = "Bring Order to Chaos."
+  
+  footer = "&copy; RayHY 2018 | [LowEntropy](/) | [Flight Rules](/flight-rules/)"
 
 [permalinks]
 blog = "/blog/:year:month:day-:title/"
+flight-rules = "/flight-rules/:year:month:day-:title/"
 
 [blackfriday]
   hrefTargetBlank = true

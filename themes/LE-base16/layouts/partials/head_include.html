@@ -1,4 +1,4 @@
-{{ $main := resources.Get "css/main.css" }}
+{{- $main := resources.Get "css/main.css" -}}
 {{ $max52em := resources.Get "css/max52em.css" }}
 {{ $single := resources.Get "css/single.css" }}
 {{ $fonts := resources.Get "css/fonts.css" }}
@@ -6,17 +6,9 @@
 {{ $homepage := resources.Get "css/homepage.css" }}
 {{ $highlight := resources.Get "css/highlight.css" }}
 
-{{ $menu := resources.Get "css/menu.css" }}
+{{ $menu := resources.Get "css/menu.css" -}}
 
 {{- $style := slice $homepage $main $max52em $single $fonts  $highlight $menu | resources.Concat "/css/style.css" | minify | fingerprint -}}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-    <script>
-        function toggledisplay(elementID, buttonID)
-        {
-            (function(style) {
-                style.display = style.display === 'none' ? '' : 'none';
-            })(document.getElementById(elementID).style);
-            var button = document.getElementById(buttonID);
-            button.innerHTML = button.innerHTML === "MORE" ? "LESS" : "MORE";
-        }
-    </script>
+    {{- with $style | minify -}}
+    <style media="screen">{{ .Content | safeCSS }}</style>
+    {{ end }}

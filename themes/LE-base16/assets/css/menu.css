@@ -5,6 +5,10 @@
     div.menu-mobie {
         display: inherit
     }
+    #hidden-menu>div.menu {
+        text-align:right;
+        margin-top:12px
+    }
 }
 @media (min-width: 52em) {
     div.menu-mobie {

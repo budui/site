@@ -13,7 +13,6 @@
     <meta name="referrer" content="no-referrer">
     {{ .Hugo.Generator }}
 
-    
     {{ template "_internal/schema.html" . }}
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
@@ -23,7 +22,7 @@
     <link rel="alternate" href="{{ "index.xml" | relURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
     <title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}</title>
 
-    {{ partial "head_include" . }}
+    {{- partial "head_include" . -}}
 </head>
 <body>
     <header>
@@ -31,25 +30,28 @@
             <a class="path" href="{{ .Site.BaseURL }}">[{{ .Site.Title }}]</a>
             <span class="caret"># _</span>
             <div class="right">
-            <div class="menu-pc">
-                <a class="path" href="/blog/">ARCHIVE</a>
-                {{ range $i, $page := (where .Site.RegularPages "Section" "" ) }}
-                |
-                <a class="path" href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
-                {{ end }}
-            </div>
-            <div class="menu-mobie">
-                <a class="path" id="hidden-menu-toggle-button" 
-                href="javascript:toggledisplay('hidden-menu','hidden-menu-toggle-button');">MORE</a>
-            </div>
+                <div class="menu-pc">
+                    {{- $menulist := .Site.Menus.main -}}
+                    {{- $len := (len $menulist ) -}}
+                    {{- range $index, $ele := $menulist -}}
+                    <a class="path" href="{{ $ele.URL }}">{{ $ele.Name }}</a>
+                    {{- if gt $len (add $index 1) -}}
+                    <span> | </span>
+                    {{- end -}}
+                    {{- end -}}
+                </div>
+                <div class="menu-mobie">
+                    <a class="path" id="hidden-menu-toggle-button" onclick="toggledisplay('hidden-menu','hidden-menu-toggle-button');" href="#">MORE</a>
+                </div>
             </div>
         </div>
-        <div id="hidden-menu" style="display: none;">
-            <div style="text-align:right;margin-top:12px">
-                <a class="path" href="/blog/">ARCHIVE</a>
-                {{ range $i, $page := (where .Site.RegularPages "Section" "" ) }}
-                |
-                <a class="path" href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+        <div id="hidden-menu" style="display: none">
+            <div class="menu">
+                {{- range $index, $ele := $menulist -}}
+                <a class="path" href="{{ $ele.URL }}">{{ $ele.Name }}</a>
+                {{if gt $len (add $index 1) }}
+                <span> | </span>
+                {{ end }}
                 {{ end }}
             </div>
         </div>
@@ -57,30 +59,13 @@
     <div class="container">
         {{ block "content" . }}{{ end }}
     </div>
+
     <footer>
         <div class="container">
             <span class="copyright">&copy; {{ .Site.LastChange.Year }} {{ .Site.Params.AuthorName }} - <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></span>
         </div>
     </footer>
-    {{ if (and .IsPage .Params.comment | default true)}}
-    {{ partial "isso.html" . }}
-    {{ end }}
-        
-    <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
-    <script>
-    (function(f, a, t, h, o, m){
-        a[h]=a[h]||function(){
-        (a[h].q=a[h].q||[]).push(arguments)
-        };
-        o=f.createElement('script'),
-        m=f.getElementsByTagName('script')[0];
-        o.async=1; o.src=t; o.id='fathom-script';
-        m.parentNode.insertBefore(o,m)
-    })(document, window, '//stat.jinxiapu.cn/tracker.js', 'fathom');
-    fathom('set', 'siteId', 'FLVJN');
-    fathom('trackPageview');
-    </script>
-    <!-- / Fathom -->
+    {{ partial "footer_custom" . }}
 </body>
 </html>
 
