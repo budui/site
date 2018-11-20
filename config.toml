@@ -3,6 +3,9 @@ languageCode = "zh-CN"
 title = "LowEntropy"
 theme = "LE-base16"
 
+
+enableRobotsTXT = true
+
 hasCJKLanguage = true
 
 pygmentsCodeFences = true
