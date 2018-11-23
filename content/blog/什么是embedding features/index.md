@@ -17,7 +17,7 @@ description: embedding 这个词不太好翻译，但背后的概念还是比较
 
 > When some object X is said to be embedded in another object Y, the embedding is given by some injective and structure-preserving map f : X → Y.
 
-embedding就是映射的过程：X映射到Y，这个映射由两个特点：**injective**和**structure-preserving**。**injective**就是单射(回想一下函数的概念)，指所有x,y∈A,且x≠y，都有f(x)≠f(y)；而**structure-preserving**可以翻译保持结构，这里“保持结构”的具体含义，需要根据所讨论的结构或具体数学问题而定，比如在X所在的空间，有X1<X2, 那么映射得到的Y1，Y2在Y空间也有约束：Y1<Y2。
+embedding就是映射的过程：X映射到Y，这个映射由两个特点：**injective**和**structure-preserving**。**injective**就是单射(回想一下函数的概念)，指所有x,y∈A,且x≠y，都有f(x)≠f(y)；而**structure-preserving**可以翻译为保持结构，这里“保持结构”的具体含义，需要根据所讨论的结构或具体数学问题而定，比如在X所在的空间，有X1<X2, 那么映射得到的Y1，Y2在Y空间也有约束：Y1<Y2。
 
 所以在机器学习领域，embedding指将数据转换为**合适**的特征表示，**合适**是指样本特定的属性可以用距离的概念表示出来。通过embeding可以将原始样本数据转换为适合机器学习的特征数据。比如，针对同一个语音样本集，一个区分说话人的模型可以把语音样本转换为一个数值向量，来自同一人的语音样本对应的`embedding features`有着更小的欧式距离；然而对于另一个识别语音内容的模型，说了相同话的语音(而不是同一个人的语音)对应的`embedding features`会有更小的欧式距离。甚至你还可以再设计一种映射来表达“愤怒”，“高兴”等情绪。**embedding features就是方便用距离表示属性相似程度的特征**，属性相似的样本对应的特征之间距离更小，这正是前一段提到的`structure-preserving`。
 
