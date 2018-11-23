@@ -1,9 +1,10 @@
-<script data-isso="https://comments.lowentropy.me/" 
+{{ with .Page.Site.Params.comments.isso.Host }}
+<script data-isso="{{ . }}" 
   data-isso-css="true"
-  data-isso-lang="zh_CN" 
+  data-isso-lang="zh_CN"
   data-isso-reply-to-self="false"
   data-isso-reply-notifications="true"
   data-isso-require-author="true" 
   data-isso-require-email="true"
-  data-isso-vote="true" 
-  data-vote-levels="" src="https://comments.lowentropy.me/js/embed.min.js"></script>
+  data-isso-vote="true" src="{{ . }}js/embed.min.js"></script>
+{{ end }}

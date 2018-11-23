@@ -3,7 +3,6 @@ languageCode = "zh-CN"
 title = "LowEntropy"
 theme = "LE-base16"
 
-
 enableRobotsTXT = true
 
 hasCJKLanguage = true
@@ -11,22 +10,28 @@ hasCJKLanguage = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 
+googleAnalytics = "UA-120056178-1"
+
 footnotereturnlinkcontents = "↩"
 
 enableEmoji = true
+
+[permalinks]
+blog = "/blog/:year:month:day-:title/"
+flight-rules = "/flight-rules/:year:month:day-:title/"
 
 [[menu.main]]
     name = "ARCHIVE"
     url = "/blog/"
     weight = 1
 [[menu.main]]
-    name = "ABOUT"
-    url = "/about/"
-    weight = 4
-[[menu.main]]
     name = "FR"
     url = "/flight-rules/"
     weight = 2
+[[menu.main]]
+    name = "ABOUT"
+    url = "/about/"
+    weight = 3
 
 
 [params]
@@ -36,9 +41,8 @@ enableEmoji = true
   
   footer = "&copy; RayHY 2018 | [LowEntropy](/) | [Flight Rules](/flight-rules/)"
 
-[permalinks]
-blog = "/blog/:year:month:day-:title/"
-flight-rules = "/flight-rules/:year:month:day-:title/"
+[params.comments.isso]
+Host = "https://comments.lowentropy.me/"
 
 [blackfriday]
   hrefTargetBlank = true
