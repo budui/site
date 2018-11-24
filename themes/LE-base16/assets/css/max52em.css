@@ -3,7 +3,7 @@
         width: 100%;
     }
 
-    article.single section,
+    article.single>section,
     .article-list article {
         padding-left: 2rem;
         padding-right: 2rem;

@@ -62,7 +62,7 @@ div.clearfix {
   overflow: auto;
 }
 
-article.single section,
+article.single>section,
 .article-list article {
   background-color: var(--base07);
   color: var(--base00);
