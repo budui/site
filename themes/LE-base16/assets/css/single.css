@@ -56,10 +56,10 @@ article.single .meta {
   }
   
   article.single p code {
-    /* padding: 0.2em 0.5em; */
-    border-radius: 4px;
-    background: var(--base05);
-    color: var(--base02);
+    padding: 3px 6px;
+    font-size: 0.78em;
+    white-space: pre-wrap;
+    border-radius: 3px;
   }
   
   article.single figure, article.single div.highlight {

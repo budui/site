@@ -12,14 +12,13 @@
 {{- $main := resources.Get "css/main.css" -}}
 {{ $max52em := resources.Get "css/max52em.css" }}
 {{ $single := resources.Get "css/single.css" }}
-{{ $fonts := resources.Get "css/fonts.css" }}
 
 {{ $homepage := resources.Get "css/homepage.css" }}
 {{ $highlight := resources.Get "css/highlight.css" }}
 
 {{ $menu := resources.Get "css/menu.css" -}}
 
-{{- $style := slice $homepage $main $max52em $single $fonts  $highlight $menu | resources.Concat "/css/style.css" | minify | fingerprint -}}
+{{- $style := slice $homepage $main $max52em $single  $highlight $menu | resources.Concat "/css/style.css" | minify | fingerprint -}}
     {{- with $style | minify -}}
     <style media="screen">{{ .Content | safeCSS }}</style>
     {{ end }}
