@@ -7,6 +7,8 @@ enableRobotsTXT = true
 
 hasCJKLanguage = true
 
+paginate = 3
+
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 
@@ -38,6 +40,8 @@ flight-rules = "/flight-rules/:year:month:day-:title/"
   AuthorName = "Ray Wong"
   GitHubUser = "jinxiapu"
   Subtitle = "Bring Order to Chaos."
+
+  description = "Low Entropy - Bring Order to Chaos"
   
   footer = "&copy; RayHY 2018 | [LowEntropy](/) | [Flight Rules](/flight-rules/)"
 

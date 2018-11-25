@@ -7,7 +7,7 @@
     <h1 class="headline">Recent Posts</h1>
     
     <div class="article-list">
-        {{ range (.Paginate (where .Data.Pages "Section" "blog") 5).Pages }}
+        {{ range (.Paginate (where .Data.Pages "Section" "blog")).Pages }}
         {{ partial "article-list-item.html" . }}
         {{ end }}  
     </div>

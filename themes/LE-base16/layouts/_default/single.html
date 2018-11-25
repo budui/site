@@ -5,7 +5,9 @@
     <article class="single" itemscope itemtype="http://schema.org/BlogPosting">
       <div class="meta">
             <span class="key">by</span>
-            <span class="val">{{ $.Site.Params.AuthorName }}</span>
+            <span itemprop="author publisher" itemscope itemtype="http://schema.org/Person">
+                <span class="val" itemprop="name">{{ $.Site.Params.AuthorName }}</span>
+            </span>
             <br>
     {{ if not .Page.Date.IsZero }}
         <span class="key">published on</span>
@@ -13,18 +15,18 @@
     {{ end }}
     {{ with .Params.categories }}
         <span class="key">{{ if $page.Date.IsZero }}published {{ end }}in</span>
-        <span class="val">
+        <span class="val" itemprop="articleSection">
     {{ range . }}
-            <a href="{{ . | printf "categories/%s" | relURL }}">{{ . }}</a>
+            <a href="{{ . | printf "categories/%s" | relURL }}" rel="category">{{ . }}</a>
     {{ end }}
         </span>
     {{ end }}
     {{ with .Params.tags }}
         <br>
         <span class="key">tags:</span>
-        <span class="val">
+        <span class="val" itemprop="keywords">
     {{ range . }}
-            <a href="{{ . | printf "tags/%s" | relURL }}">{{ . }}</a>
+            <a href="{{ . | printf "tags/%s" | relURL }}" rel="tag">{{ . }}</a>
     {{ end }}
         </span>
     {{ end }}
