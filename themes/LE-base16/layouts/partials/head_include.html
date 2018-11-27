@@ -17,8 +17,9 @@
 {{ $highlight := resources.Get "css/highlight.css" }}
 
 {{ $menu := resources.Get "css/menu.css" -}}
+{{ $isso := resources.Get "css/isso.css" -}}
 
-{{- $style := slice $homepage $main $max52em $single  $highlight $menu | resources.Concat "/css/style.css" | minify | fingerprint -}}
+{{- $style := slice $homepage $main $max52em $single  $highlight $menu $isso | resources.Concat "/css/style.css" | minify | fingerprint -}}
     {{- with $style | minify -}}
     <style media="screen">{{ .Content | safeCSS }}</style>
     {{ end }}
