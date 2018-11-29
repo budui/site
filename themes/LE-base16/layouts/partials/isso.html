@@ -1,5 +1,7 @@
+{{ $Title := .Title }}
 {{ with .Page.Site.Params.comments.isso.Host }}
 <script data-isso="{{ . }}" 
+  data-title="{{ $Title }} - LowEntorpy"
   data-isso-css="true"
   data-isso-lang="zh_CN"
   data-isso-reply-to-self="false"
