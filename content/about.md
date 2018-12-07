@@ -13,9 +13,9 @@ title: "ABOUT"
 
 ## About me
 
-| ID    | GitHub                                    | Email              |
-| ----- | :---------------------------------------- | :----------------- |
-| RayHY | [@jinxiapu](https://github.com/jinxiapu/) | i(at)lowentropy.me |
+| ID    | GitHub                              | Email            |
+| ----- | :---------------------------------- | :----------------|
+| RayHY | [@RayHY](https://github.com/RayHY/) | me(#)jinxiapu.cn |
 
 ## About underlying technology
 
