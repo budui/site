@@ -7,7 +7,7 @@ enableRobotsTXT = true
 
 hasCJKLanguage = true
 
-paginate = 3
+paginate = 10
 
 pygmentsCodeFences = true
 pygmentsUseClasses = true
