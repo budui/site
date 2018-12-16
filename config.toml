@@ -46,7 +46,7 @@ flight-rules = "/flight-rules/:year:month:day-:title/"
   footer = "&copy; RayHY 2018 | [LowEntropy](/) | [Flight Rules](/flight-rules/)"
 
 [params.comments.isso]
-Host = "https://comments.lowentropy.me/"
+Host = "https://c.jinxiapu.cn/"
 
 [blackfriday]
   hrefTargetBlank = true
