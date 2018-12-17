@@ -45,7 +45,7 @@ body {
   color: var(--base07);
   line-height: 1.8;
   font-size: 100%;
-  font-family: "Lucida Sans Typewriter","Lucida Console", Consolas, monaco,"Bitstream Vera Sans Mono",monospace,microsoft yahei,微软雅黑,STXihei,华文细黑,serif;
+  font-family: "Lucida Sans Typewriter","Lucida Console",Consolas,"Bitstream Vera Sans Mono", monaco,Georgia,source-han-serif-sc,'Source Han Serif SC','Source Han Serif CN','Source Han Serif TC','Source Han Serif TW','Source Han Serif','Songti SC','Microsoft YaHei',serif
 }
 
 .container {
