@@ -3,6 +3,8 @@ date: 2018-10-31
 title: "ABOUT"
 ---
 
+<img src="/favicon.svg" width="150" height="150"/>
+
 ## About lowentropy.me
 
 *LowEntropy* means **low entropy**(低熵).

@@ -1,0 +1,29 @@
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="502" width="502" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <ellipse ry="32" rx="32" id="svg_2" cy="70" cx="70" stroke-width="1.5" stroke="#000" fill="#e8e6df"/>
+  <ellipse ry="32" rx="32" id="svg_4" cy="340" cx="70" stroke-width="1.5" stroke="#000" fill="#747369"/>
+  <ellipse ry="32" rx="32" id="svg_5" cy="160" cx="70" stroke-width="1.5" stroke="#000" fill="#d3d0c8"/>
+  <ellipse ry="32" rx="32" id="svg_6" cy="250" cx="70" stroke-width="1.5" stroke="#000" fill="#a09f93"/>
+  <ellipse ry="32" rx="32" id="svg_7" cy="430" cx="70" stroke-width="1.5" stroke="#000" fill="#515151"/>
+  <ellipse ry="32" rx="32" id="svg_8" cy="250" cx="430" stroke-width="1.5" stroke="#000" fill="#ffcc66"/>
+  <ellipse ry="32" rx="32" id="svg_9" cy="430" cx="250" stroke-width="1.5" stroke="#000" fill="#2d2d2d"/>
+  <ellipse ry="32" rx="32" id="svg_10" cy="430" cx="340" stroke-width="1.5" stroke="#000" fill="#d27b53"/>
+  <ellipse ry="32" rx="32" id="svg_11" cy="340" cx="250" stroke-width="1.5" stroke="#000" fill="#6699cc"/>
+  <ellipse ry="32" rx="32" id="svg_13" cy="160" cx="250" stroke-width="1.5" stroke="#000" fill="#66cccc"/>
+  <ellipse ry="32" rx="32" id="svg_14" cy="70" cx="250" stroke-width="1.5" stroke="#000" fill="#f2f0ec"/>
+  <ellipse ry="32" rx="32" id="svg_15" cy="70" cx="340" stroke-width="1.5" stroke="#000" fill="#f2777a"/>
+  <ellipse ry="32" rx="32" id="svg_16" cy="70" cx="430" stroke-width="1.5" stroke="#000" fill="#cc99cc"/>
+  <ellipse ry="32" rx="32" id="svg_17" cy="430" cx="160" stroke-width="1.5" stroke="#000" fill="#393939"/>
+  <ellipse ry="32" rx="32" id="svg_18" cy="250" cx="340" stroke-width="1.5" stroke="#000" fill="#f99157"/>
+  <ellipse ry="32" rx="32" id="svg_19" cy="430" cx="430" stroke-width="1.5" stroke="#000" fill="#99cc99"/>
+ </g>
+</svg>
