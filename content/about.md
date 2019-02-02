@@ -3,9 +3,13 @@ date: 2018-10-31
 title: "ABOUT"
 ---
 
-<img src="/favicon.svg" width="150" height="150"/>
+> “The … ultimate purpose of life, mind, and human striving: to deploy energy and information to fight back the tide of entropy and carve out refuges of beneficial order.”
+>
+> — Steven Pinker
 
 ## About lowentropy.me
+
+<img src="/favicon.svg" width="150" height="150"/>
 
 *LowEntropy* means **low entropy**(低熵).
 
