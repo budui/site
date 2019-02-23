@@ -25,7 +25,7 @@ code {
 }
 .terms { font-size: .9em; }
 .menu, .article-meta, footer { text-align: center; }
-.title { font-size: 1.1em; }
+.title { font-size: 1.1em; line-height: 150%;}
 footer a { text-decoration: none; }
 hr {
   border-style: dashed;
