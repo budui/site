@@ -26,6 +26,12 @@
           </script>
           {{ end }}
         {{ end }}
+
+        {{ with resources.Get "js/instant~1.1.0.js" | minify }}
+        <script>
+            {{ .Content | safeJS }}
+        </script>
+        {{ end }}
     </footer>
   </body>
 </html>
