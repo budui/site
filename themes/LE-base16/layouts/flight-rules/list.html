@@ -3,7 +3,16 @@
 {{ .Content }}
 
 <ul>
-  {{ range (where .Data.Pages "Section" "!=" "") }}
+  {{ range (where .Data.Pages "Dir" "!=" "flight-rules/bugs/") }}
+  <li>
+    <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+    <a href="{{ .URL }}">{{ .Title | markdownify }}</a>
+  </li>
+  {{ end }}
+</ul>
+<h3>bugs</h3>
+<ul>
+  {{ range (where .Data.Pages "Dir" "flight-rules/bugs/") }}
   <li>
     <span class="date">{{ .Date.Format "2006/01/02" }}</span>
     <a href="{{ .URL }}">{{ .Title | markdownify }}</a>
