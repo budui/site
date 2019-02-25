@@ -115,6 +115,10 @@ $$AveP = \sum_{i=1}^{n}P(i)\Delta r(i), i\in\Omega$$
 ![mAP](map.png)
 为了计算AP更精确，我们可以用梯形面积公式替换矩形面积：
 $$AveP = \sum_{i=1}^{n}\frac{P(i)+P(i-1)}{2}\Delta r(i), i\in\Omega, P(0)=P(1)$$
+> **注意**：$\text{i-1}\in\Omega$不一定成立，所以这里的$P(i-1)$不是$\Omega$集合中的上一个点的查准率，而是第i-1个查询结果对应的点的查准率。
+>
+> 详细分析附在了文章最后。
+
 这两个公式都可以计算AP，后一个公式精确度更高一些。
 
 最后，平均一下每个query的AP值就得到了mAP。
@@ -138,3 +142,14 @@ match3 i=3 (P(2), P(3)) = (2/3, 3/4)
 query为🍏时，$AP=0.766666$所以$mAP=0.682$
 
 同理可以计算`Similarity2()`的mAP为0.722，所以我们最终得到，`Similarity2()`优于`Similarity1()`
+
+## 更正：
+
+写完这篇文章以后我就准备写代码实现这两个代码，参考一直用着的一份baseline代码[Person_reID_baseline_pytorch](https://github.com/layumi/Person_reID_baseline_pytorch)时以为其计算方法和我上面的公式不一样，我一下子没理解，还给这个repo发了一个[issue](https://github.com/layumi/Person_reID_baseline_pytorch/issues/110)。
+
+[@layumi](https://github.com/layumi/)的解释我最后才看懂，发现是我理解错误了。
+上面的公式 $AveP = \sum_{k=1}^{n}P(k)\Delta r(k) = \sum_{i=1}^{n}P(i)\Delta r(i), i\in\Omega$是成立的。但是，当为了精确使用梯形面积代替长方形面积时，我用了下面的公式：
+$$AveP = \sum_{i=1}^{n}\frac{P(i)+P(i-1)}{2}\Delta r(i), i\in\Omega, P(0)=P(1)$$
+这种公式中的i是什么容易引起误会，我就一下子搞错了，错误地指责@layumi写错了代码。这里的i不是遍历用的下标1,2,3,4...而是$\Omega$集合中的点2,5,6,7（随便举得例子）。所以，$i-1\notin\Omega$可能成立，我自己错误地把$P(i-1)$当作了$\Omega$中前一个点对应的查准率。
+
+**所以，我自己搞错了自己写的公式，抑郁之情难以言表。**
