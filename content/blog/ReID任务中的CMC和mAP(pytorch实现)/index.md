@@ -144,6 +144,10 @@ query为🍏时，$AP=0.766666$所以$mAP=0.682$
 
 同理可以计算`Similarity2()`的mAP为0.722，所以我们最终得到，`Similarity2()`优于`Similarity1()`
 
+## 代码实现
+
+相信你在理解了mAP和CMC之后，再用代码实现它俩就变得很轻松了。我最近一直在做行人重识别的项目，可以拿我一直在用的[evaluate.py](https://gist.github.com/RayHY/ba3b2c5868f7d68982191be7db32b453#file-evaluate-py-L28)中的`evaluate_with_index()`函数做一个参考。
+
 ## 更正：
 
 写完这篇文章以后我就准备写代码实现这两个代码，参考一直用着的一份baseline代码[Person_reID_baseline_pytorch](https://github.com/layumi/Person_reID_baseline_pytorch)时以为其计算方法和我上面的公式不一样，我一下子没理解，还给这个repo发了一个[issue](https://github.com/layumi/Person_reID_baseline_pytorch/issues/110)。
