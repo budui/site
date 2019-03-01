@@ -17,7 +17,7 @@
 {{ end }}
 
 <main>
-    {{ .Content }}
+  {{ partial "content.html" . }}
 </main>
 
 {{- if (and .IsPage (eq .Params.markup "pandoc" ) ) -}}

@@ -1,0 +1,9 @@
+{{ $reAltIn := "<img src=\"([^\"]+)\" alt=\"([^\"]+)\" />" }}
+{{ $reAltOut := (printf "<img src=\"https://static.jinxiapu.cn/images/%s$1\" alt=\"$2\">" .Dir )}}
+{{ $altContent := .Content | replaceRE $reAltIn $reAltOut | safeHTML }}
+
+{{ $reAltTitleIn := "<img src=\"([^\"]+)\" alt=\"([^\"]+)\" title=\"([^\"]+)\" />" }}
+{{ $reAltTitleOut := (printf "<img src=\"https://static.jinxiapu.cn/images/%s$1\" alt=\"$2\" title=\"$3\">" .Dir )}}
+{{ $finalContent := $altContent | replaceRE $reAltTitleIn $reAltTitleOut | safeHTML }}
+
+{{ $finalContent }}
