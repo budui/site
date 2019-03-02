@@ -25,18 +25,22 @@ flight-rules = "/flight-rules/:year:month:day-:title/"
 [[menu.main]]
     name = "ARCHIVE"
     url = "/blog/"
-    weight = 1
+    weight = 2
 [[menu.main]]
     name = "FR"
     url = "/flight-rules/"
-    weight = 2
+    weight = 3
 [[menu.main]]
     name = "ABOUT"
     url = "/about/"
-    weight = 3
-
+    weight = 5
+[[menu.main]]
+    name = "RSS"
+    url = "/index.xml"
+    weight = 1
 
 [params]
+  name="LowEntropy"
   AuthorName = "Ray Wong"
   GitHubUser = "jinxiapu"
   Subtitle = "Bring Order to Chaos."
