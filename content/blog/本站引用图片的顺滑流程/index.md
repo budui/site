@@ -95,7 +95,7 @@ Markdown中引用图片代码为`![re-id](ranked_results.jpg)`，如果直接用
 这时，引用的图片存放于netlify上。更改`{{ .Content }}`后得到：
 
 ```html
-[<img src="ranked_results.jpg" alt="re-id">](<img src="https://lowentropy.jinxiapu.cn/img/blog/ReID任务中的CMC和mAP/ranked_results.jpg" alt="re-id">)
+<img src="https://lowentropy.jinxiapu.cn/img/blog/ReID任务中的CMC和mAP/ranked_results.jpg" alt="re-id">
 ```
 
 只要你已经相应地把图片上传到腾讯云COS`img/blog/ReID任务中的CMC和mAP/ranked_results.jpg`这个位置。网站上就能成功地显示经过CDN缓存后的图片了。
