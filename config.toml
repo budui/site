@@ -45,6 +45,14 @@ flight-rules = "/flight-rules/:year:month:day-:title/"
   
   footer = "&copy; RayHY 2018 | [LowEntropy](/) | [Flight Rules](/flight-rules/)"
 
+  ImageUseCDN = true
+
+[params.CDN]
+#enable = false
+enable = true
+# Host must end with `/`
+Host = "https://lowentropy.jinxiapu.cn/img/"
+
 [params.comments.isso]
 Host = "https://c.jinxiapu.cn/"
 
