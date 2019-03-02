@@ -45,8 +45,6 @@ flight-rules = "/flight-rules/:year:month:day-:title/"
   
   footer = "&copy; RayHY 2018 | [LowEntropy](/) | [Flight Rules](/flight-rules/)"
 
-  ImageUseCDN = true
-
 [params.CDN]
 #enable = false
 enable = true
