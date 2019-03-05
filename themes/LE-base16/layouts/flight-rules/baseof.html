@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ .Title }} | {{ .Site.Title }}</title>
     {{ with resources.Get "css/flight-rules.css" | minify }}
-    <style media="screen">{{ .Content | safeCSS }}</style>
+      <style media="screen">{{ .Content | safeCSS }}</style>
     {{ end }}
     <link rel="shortcut icon" href="/favicon.png">
+    {{- partial "analytics" . -}}
   </head>
 
   <body>
@@ -27,11 +28,7 @@
           {{ end }}
         {{ end }}
 
-        {{ with resources.Get "js/instant~1.1.0.js" | minify }}
-        <script>
-            {{ .Content | safeJS }}
-        </script>
-        {{ end }}
+        {{ partial "footer_custom" . }}
     </footer>
   </body>
 </html>

@@ -10,7 +10,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
-    <meta name="referrer" content="no-referrer">
     {{ .Hugo.Generator }}
 
     <meta name="Description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
@@ -23,7 +22,22 @@
     <link rel="alternate" href="{{ "index.xml" | relURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
     <title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}</title>
 
-    {{- partial "head_include" . -}}
+    {{- $main := resources.Get "css/main.css" -}}
+    {{ $max52em := resources.Get "css/max52em.css" }}
+    {{ $single := resources.Get "css/single.css" }}
+
+    {{ $homepage := resources.Get "css/homepage.css" }}
+    {{ $highlight := resources.Get "css/highlight.css" }}
+
+    {{ $menu := resources.Get "css/menu.css" -}}
+    {{ $isso := resources.Get "css/isso.css" -}}
+
+    {{- $style := slice $homepage $main $max52em $single  $highlight $menu $isso | resources.Concat "/css/style.css" | minify | fingerprint -}}
+    {{- with $style | minify -}}
+    <style media="screen">{{ .Content | safeCSS }}</style>
+    {{ end }}
+    
+    {{- partial "analytics" . -}}
 </head>
 <body>
     <header>
@@ -66,7 +80,27 @@
             <span class="copyright">&copy; {{ .Site.LastChange.Year }} {{ .Site.Params.AuthorName }} - <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></span>
         </div>
     </footer>
+    {{ with resources.Get "js/menu.js" | minify }}
+    <script>
+        {{ .Content | safeJS }}
+    </script>
+    {{ end }}
+
+    {{- if (and .IsPage .Params.comment | default true ) -}}
+        {{ $Title := .Title }}
+        {{ with .Page.Site.Params.comments.isso.Host }}
+    <script data-isso="{{ . }}" 
+        data-title="{{ $Title }} - LowEntorpy"
+        data-isso-css="true"
+        data-isso-lang="zh_CN"
+        data-isso-reply-to-self="false"
+        data-isso-reply-notifications="true"
+        data-isso-require-author="true" 
+        data-isso-require-email="true"
+        data-isso-vote="true" src="{{ . }}js/embed.min.js"></script>
+        {{ end }}
+    {{ end }}
+
     {{ partial "footer_custom" . }}
 </body>
 </html>
-
