@@ -1,17 +1,17 @@
 ---
-date: 2018-10-31
+date: 2019-03-05
 title: "ABOUT"
 ---
+
+<img src="/favicon.svg" width="150" height="150"/>
+
+## About lowentropy.me
+
+*LowEntropy* means **low entropy**(低熵).
 
 > “The … ultimate purpose of life, mind, and human striving: to deploy energy and information to fight back the tide of entropy and carve out refuges of beneficial order.”
 >
 > — Steven Pinker
-
-## About lowentropy.me
-
-<img src="/favicon.svg" width="150" height="150"/>
-
-*LowEntropy* means **low entropy**(低熵).
 
 物理学告诉我们，如果要让一个系统变得更有序，必须有外部能量的输入。
 
@@ -19,9 +19,17 @@ title: "ABOUT"
 
 ## About me
 
-| ID    | GitHub                              | Email            |
-| ----- | :---------------------------------- | :----------------|
-| RayHY | [@RayHY](https://github.com/RayHY/) | me(#)jinxiapu.cn |
+Name: 王不对(or *Ray*)
+
+ID: 各种Ray的变体。
+
+兴趣：重识别，GAN，分布式系统。
+
+GitHub: [@RayHY](https://github.com/RayHY/)
+
+Email: me(αt)jinxiapu.cn
+
+Twitter: [@LE2ay](https://twitter.com/LE2ay)
 
 ## About underlying technology
 
@@ -30,7 +38,7 @@ title: "ABOUT"
 | Static Site Generator | [Hugo](https://gohugo.io/)                                      |
 | Theme                 | Hacked [base16](https://github.com/htdvisser/hugo-base16-theme) |
 | Host                  | [Netlify](https://www.netlify.com/)                             |
-| CDN                   | [Tencent Cloud](https://cloud.tencent.com/)                     |
+| CDN                   | [Tencent Cloud COS](https://cloud.tencent.com/product/cos)      |
 | Comment System        | [isso](https://posativ.org/isso/)                               |
 
 ## About friends
