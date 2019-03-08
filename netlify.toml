@@ -8,6 +8,12 @@ to = "https://lowentropy.me/:splat"
 status = 301
 force = true
 
+[[redirects]]
+  from = "/go-isso/*"
+  to = "https://go-isso.lowentropy.me/:splat"
+  status = 200
+  force = true
+
 [context.production.environment]
 HUGO_VERSION = "0.50"
 HUGO_ENV = "production"
