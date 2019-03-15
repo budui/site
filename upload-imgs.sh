@@ -34,7 +34,9 @@ upload_needed_images()
 if [ -f ./config.toml ]; then
     export -f upload_needed_images
     export -f upload
-    git ls-files -z -mo --exclude-standard | xargs -0 bash -c 'upload_needed_images "$@"'
+    # https://stackoverflow.com/questions/11003418/calling-shell-functions-with-xargs
+    # The underscore (_) provides a place holder for argv[0] ($0) and almost anything could be used there. 
+    git ls-files -z -mo --exclude-standard | xargs -0 -n 1 bash -c 'upload_needed_images "$@"' _
 else
     echo "EROOR！ 必须在Project根目录下运行本文件"
 fi
