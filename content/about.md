@@ -21,15 +21,15 @@ title: "ABOUT"
 
 Name: 王不对(or *Ray*)
 
-ID: 各种Ray的变体。
+学校: [HUST-AIA](http://aia.hust.edu.cn/)
 
 兴趣：重识别，GAN，分布式系统。
 
-GitHub: [@RayHY](https://github.com/RayHY/)
+GitHub: [@budui](https://github.com/budui/)
 
-Email: me(αt)jinxiapu.cn
+Email: wangbudui(αt)foxmail.com
 
-Twitter: [@LE2ay](https://twitter.com/LE2ay)
+Twitter: [@wangbudui](https://twitter.com/wangbudui)
 
 ## About underlying technology
 
