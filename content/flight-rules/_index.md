@@ -1,10 +1,6 @@
 ---
-title: Flight Rule
+title: Flight Rules
 ---
-
-[<img src="https://lowentropy.jinxiapu.cn/img/cat.jpg" style="max-width:15%;min-width:40px;float:right;border-radius:50%" alt="RayHY header" />](https://lowentropy.me)
-
-# Flight Rules
 
 ## _what to do if X occurs, and why_
 

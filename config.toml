@@ -1,7 +1,7 @@
 baseURL = "https://lowentropy.me/"
 languageCode = "zh-CN"
-title = "LowEntropy"
-theme = "LE-base16"
+title = "Low\nEntropy"
+theme = "LowEntropy-Ivy"
 
 enableRobotsTXT = true
 
@@ -23,31 +23,35 @@ blog = "/blog/:year:month:day-:title/"
 flight-rules = "/flight-rules/:year:month:day-:title/"
 
 [[menu.main]]
-    name = "ARCHIVE"
+    name = "BLOG"
     url = "/blog/"
-    weight = 2
+    weight = 1
 [[menu.main]]
-    name = "FR"
+    name = "FLIGHT RULES"
     url = "/flight-rules/"
-    weight = 3
+    weight = 2
 [[menu.main]]
     name = "ABOUT"
     url = "/about/"
     weight = 5
 [[menu.main]]
+    name = "CATEGORIES"
+    url = "/categories/"
+    weight = 3
+[[menu.main]]
+    name = "TAGS"
+    url = "/tags/"
+    weight = 4
+[[menu.main]]
     name = "RSS"
     url = "/index.xml"
-    weight = 1
 
 [params]
   name="LowEntropy"
   AuthorName = "Budui Wang"
   GitHubUser = "budui"
-  Subtitle = "Bring Order to Chaos"
 
-  description = "Low Entropy - Bring Order to Chaos"
-  
-  footer = "&copy; 2019 Budui Wang | [LowEntropy](/) | [Flight Rules](/flight-rules/)"
+  description = "有序"
 
 [params.CDN]
 #enable = false

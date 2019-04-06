@@ -1,0 +1,22 @@
+{{ if not .IsHome }}
+<h1>{{ .Title }}</h1>
+<h3>{{ with .Params.author }}{{ . }}{{ end }}
+    {{ if .Params.date }} {{ if .Params.author }} / {{ end }} {{ .Date.Format "2006-01-02" }}{{ end }}
+    {{ with .Params.categories }}
+    <span itemprop="articleSection" class="subtitle">
+        {{ range . }}
+        <a href="{{ . | printf "categories/%s" | relURL }}" rel="category">{{ . }}</a>
+        {{ end }}
+    </span>
+    {{ end }}
+    {{ with .Params.tags }}
+    
+    <span itemprop="keywords">
+        {{ range . }}
+        <a href="{{ . | printf "tags/%s" | relURL }}" rel="tag">{{ . }}</a>
+        {{ end }}
+    </span>
+    {{ end }}
+</h3>
+<hr>
+{{ end }}

@@ -1,0 +1,21 @@
+name = "LowEntropy-Ivy"
+license = "Unlicense"
+licenselink = "https://github.com/yihui/hugo-ivy/blob/master/LICENSE.md"
+description = "A theme ported from Ivy by Yihui Xie, then modified by Budui Wang"
+homepage = "https://lowentropy.me"
+tags = ["minimal", "blog", "personal", "clean", "simple", "minimalist"]
+features = ["blog"]
+min_version = "0.50"
+
+[modified]
+  name = "Budui Wang"
+  homepage = "https://lowentropy.me"
+
+[author]
+  name = "Yihui Xie"
+  homepage = "https://yihui.name"
+
+[original]
+    author = "dmulholland"
+    homepage = "http://mulholland.xyz/docs/ivy/"
+    repo = "https://github.com/dmulholland/ivy"
