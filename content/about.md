@@ -1,6 +1,6 @@
 ---
-date: 2019-03-05
 title: "ABOUT"
+disableMeta: true
 ---
 
 ## About me

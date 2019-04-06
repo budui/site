@@ -48,8 +48,25 @@
         {{ if .RSSLink }}
         <link href="{{ .RSSLink | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
         {{ end }}
-        <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}" />
-        <link rel="stylesheet" href="{{ "/css/fonts.css" | relURL }}" />
+
+        {{- $main := resources.Get "css/main.css" -}}
+        {{ $fonts := resources.Get "css/fonts.css" }}
+        {{ $highlight := resources.Get "css/highlight.css" }}
+        {{ $isso := resources.Get "css/isso.css" -}}
+        {{ if .IsPage }}
+        {{- $style := slice $main $fonts $highlight $isso | resources.Concat "/css/style.css" | minify | fingerprint -}}
+        {{- with $style | minify -}}
+        <style media="screen">{{ .Content | safeCSS }}</style>
+        {{ end }}
+        {{ else }}
+        {{- $style := slice $main $fonts | resources.Concat "/css/bare-style.css" | minify | fingerprint -}}
+        {{- with $style | minify -}}
+        <style media="screen">{{ .Content | safeCSS }}</style>
+        {{ end }}
+        {{ end }}
+
+        
+
         {{ partial "head_custom.html" . }}
     </head>
 

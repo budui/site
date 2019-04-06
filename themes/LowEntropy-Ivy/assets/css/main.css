@@ -124,6 +124,10 @@ hr {
   max-width: 300px;
 }
 
+footer hr {
+  max-width: 500px;
+}
+
 .copyright {
   text-align: center;
 }
@@ -221,6 +225,20 @@ body {
 .main .title h1 {
   margin-top: 0;
   margin-bottom: 40px;
+}
+
+.title h3.post-meta {
+  font-family: "Lucida Console", 'Andale Mono', 'STKaiti', 'KaiTi', 'SimKai', monospace;
+  text-align: right;
+  margin: 0px 0 10px;
+}
+
+.title h3.post-meta .tags a{
+  font-size: .8em;
+}
+
+.title h3.post-meta .category a{
+  font-size: .9em;
 }
 
 .title h3 {

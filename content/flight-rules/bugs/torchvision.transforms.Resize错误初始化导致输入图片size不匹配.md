@@ -53,6 +53,7 @@ transform_dict = {"train": [
 ```
 
 关于尺寸的transform就是`transforms.Resize(input_size, interpolation=3)`了。查看Resize的文档:
+
 > size (sequence or int) – Desired output size. If size is a sequence like (h, w), output size will be matched to this. If size is an int, smaller edge of the image will be matched to this number. i.e, if height > width, then image will be rescaled to (size * height / width, size)
 
 size这个参数既可以是一个数字，又可以是一个tuple，我代码中写的是input_size，按照文档所言，图片处理后的输出尺寸每次都会被重新计算为(input_size*height/width, size)，这样如果输入图片尺寸不一致，输出图片尺寸会不一致。

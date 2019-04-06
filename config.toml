@@ -2,25 +2,41 @@ baseURL = "https://lowentropy.me/"
 languageCode = "zh-CN"
 title = "Low\nEntropy"
 theme = "LowEntropy-Ivy"
-
 enableRobotsTXT = true
-
 hasCJKLanguage = true
-
 paginate = 10
-
 pygmentsCodeFences = true
 pygmentsUseClasses = true
-
 googleAnalytics = "UA-120056178-1"
-
 footnotereturnlinkcontents = "↩"
-
 enableEmoji = true
 
 [permalinks]
 blog = "/blog/:year:month:day-:title/"
 flight-rules = "/flight-rules/:year:month:day-:title/"
+
+[params]
+  name="LowEntropy"
+  AuthorName = "王不对"
+  description = "低熵"
+
+[params.CDN]
+#enable = false
+enable = true
+# Host must end with `/`
+Host = "https://lowentropy.jinxiapu.cn/img/"
+
+[params.comments.isso]
+Host = "https://c.jinxiapu.cn/"
+
+[params.katex]
+base = "https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/"
+CSSintegrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ"
+JSIntegrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij"
+AutoRenderIntegrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+
+[blackfriday]
+  hrefTargetBlank = true
 
 [[menu.main]]
     name = "BLOG"
@@ -45,28 +61,3 @@ flight-rules = "/flight-rules/:year:month:day-:title/"
 [[menu.main]]
     name = "RSS"
     url = "/index.xml"
-
-[params]
-  name="LowEntropy"
-  AuthorName = "Budui Wang"
-  GitHubUser = "budui"
-
-  description = "有序"
-
-[params.CDN]
-#enable = false
-enable = true
-# Host must end with `/`
-Host = "https://lowentropy.jinxiapu.cn/img/"
-
-[params.comments.isso]
-Host = "https://c.jinxiapu.cn/"
-
-[params.katex]
-base = "https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/"
-CSSintegrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ"
-JSIntegrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij"
-AutoRenderIntegrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
-
-[blackfriday]
-  hrefTargetBlank = true

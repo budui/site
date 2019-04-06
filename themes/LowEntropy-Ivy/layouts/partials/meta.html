@@ -1,22 +1,31 @@
 {{ if not .IsHome }}
-<h1>{{ .Title }}</h1>
-<h3>{{ with .Params.author }}{{ . }}{{ end }}
-    {{ if .Params.date }} {{ if .Params.author }} / {{ end }} {{ .Date.Format "2006-01-02" }}{{ end }}
+<h3 class="post-meta">
     {{ with .Params.categories }}
-    <span itemprop="articleSection" class="subtitle">
+    <span itemprop="articleSection" class="category">
         {{ range . }}
         <a href="{{ . | printf "categories/%s" | relURL }}" rel="category">{{ . }}</a>
         {{ end }}
     </span>
+    /
     {{ end }}
     {{ with .Params.tags }}
-    
-    <span itemprop="keywords">
+    <span itemprop="keywords" class="tags">
         {{ range . }}
         <a href="{{ . | printf "tags/%s" | relURL }}" rel="tag">{{ . }}</a>
         {{ end }}
     </span>
     {{ end }}
 </h3>
+
+
+<h1>{{ .Title }}</h1>
+{{ if .IsPage }}
+<h3>
+    {{ if not .Params.disableMeta }}
+    {{ with $.Site.Params.AuthorName }}{{ . }}{{ end }}
+    {{ end }}
+    {{ if .Params.date }} {{ if $.Site.Params.AuthorName }} / {{ end }} {{ .Date.Format "2006-01-02" }}{{ end }}
+</h3>
+{{ end }}
 <hr>
 {{ end }}
