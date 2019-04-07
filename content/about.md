@@ -3,9 +3,9 @@ title: "ABOUT"
 disableMeta: true
 ---
 
-## About me
+### About me
 
-Name: 王不对(or *Ray*)
+姓名: 王不对(or *Ray*)
 
 学校: [HUST-AIA](http://aia.hust.edu.cn/)
 
@@ -17,25 +17,19 @@ Email: wangbudui(αt)foxmail.com
 
 Twitter: [@wangbudui](https://twitter.com/wangbudui)
 
-## About underlying technology
+### About underlying technology
 
-| Component             | With                                                            |
-| :-------------------- | :-------------------------------------------------------------- |
-| Static Site Generator | [Hugo](https://gohugo.io/)                                      |
-| Theme                 | Hacked [base16](https://github.com/htdvisser/hugo-base16-theme) |
-| Host                  | [Netlify](https://www.netlify.com/)                             |
-| CDN                   | [Tencent Cloud COS](https://cloud.tencent.com/product/cos)      |
-| Comment System        | [isso](https://posativ.org/isso/)                               |
+网站生成器: [Hugo](https://gohugo.io/)
 
-## About friends
+主题: Hacked [hugo-ivy](https://github.com/yihui/hugo-ivy)
 
-| Who | Link                                 | Desc |
-| --- | ------------------------------------ | ---- |
-| zmy | [zmy的小窝](https://blog.zmyme.com/) | 好友 |
+Host: [Netlify](https://www.netlify.com/)
 
-本站只有友情链接，先友后链。**网络一线牵，珍惜这段缘。**
+CDN: [Tencent Cloud COS](https://cloud.tencent.com/product/cos)
 
-## About license
+评论系统: [isso](https://posativ.org/isso/)
+
+### About license
 
 ![知识共享许可协议](https://lowentropy.jinxiapu.cn/img/creativecommons.png) \
 
