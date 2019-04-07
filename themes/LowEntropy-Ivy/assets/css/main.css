@@ -322,7 +322,7 @@ thead, tfoot, tr:nth-child(even) {
   .masthead {
     width: auto;
     float: none;
-    padding: 20px 0 60px;
+    padding: 20px 0 35px;
     text-align: center;
     margin-left: 10px;
     margin-right: 10px;
@@ -339,6 +339,7 @@ thead, tfoot, tr:nth-child(even) {
 
   .masthead h1 {
     text-align: center;
+    display: none;
   }
 
   .masthead .tagline {

@@ -18,7 +18,7 @@ flight-rules = "/flight-rules/:year:month:day-:title/"
 [params]
   name="LowEntropy"
   AuthorName = "王不对"
-  description = "低熵"
+  #description = "低熵"
 
 [params.CDN]
 #enable = false
