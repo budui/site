@@ -184,6 +184,10 @@ body {
   line-height: 58px;
 }
 
+.masthead .menu li#home-li {
+  display: none;
+}
+
 .masthead h1 a {
   border-bottom: none;
 }
@@ -370,8 +374,12 @@ thead, tfoot, tr:nth-child(even) {
     padding: 0;
   }
 
-  .masthead .menu li:first-child {
+  .masthead .menu li:nth-child(2) {
     border-top: 1px solid;
+  }
+
+  .masthead .menu li#home-li {
+    display: inline;
   }
 
   .masthead .menu li li:last-child {

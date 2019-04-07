@@ -7,6 +7,7 @@ tags:
 - Golang
 - Web
 description: 为你理清源代码中一堆Handler方法，Handle函数，Handler接口，handle变量，HandleFunc函数/方法之间的关系。
+spotlight: true
 ---
 
 ## 自带路由的使用

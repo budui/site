@@ -1,0 +1,16 @@
+{{ define "content" -}}
+
+{{ .Content }}
+<strong>精选:</strong>
+<ul>
+    {{ range (where .Data.Pages "Section" "!=" "") }}
+        {{ if .Params.spotlight }}
+        <li>
+            <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+            <a href="{{ .URL }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+    {{ end }}
+</ul>
+<p><a href="/blog/">BLOG</a> 和 <a href="/flight-rules/">FLIGHT RULES</a> 中还有很多文章✨</p>
+{{- end }}

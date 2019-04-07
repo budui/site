@@ -8,6 +8,7 @@ tags:
 - ReID
 - Pytorch
 description: 详细讲解ReID任务中的CMC和mAP
+spotlight: true
 ---
 
 ## ReID
