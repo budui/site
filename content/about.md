@@ -9,11 +9,11 @@ disableMeta: true
 
 学校: [HUST-AIA](http://aia.hust.edu.cn/)
 
-兴趣：重识别，GAN，分布式系统。
+兴趣：重识别，GAN，云计算。
 
 GitHub: [@budui](https://github.com/budui/)
 
-Email: wangbudui(αt)foxmail.com
+邮件: wangbudui(αt)foxmail.com
 
 Twitter: [@wangbudui](https://twitter.com/wangbudui)
 
@@ -23,7 +23,7 @@ Twitter: [@wangbudui](https://twitter.com/wangbudui)
 
 主题: Hacked [hugo-ivy](https://github.com/yihui/hugo-ivy)
 
-Host: [Netlify](https://www.netlify.com/)
+托管: [Netlify](https://www.netlify.com/)
 
 CDN: [Tencent Cloud COS](https://cloud.tencent.com/product/cos)
 
@@ -33,4 +33,4 @@ CDN: [Tencent Cloud COS](https://cloud.tencent.com/product/cos)
 
 ![知识共享许可协议](https://lowentropy.jinxiapu.cn/img/creativecommons.png) \
 
-[Attribution-NonCommercial 4.0 International](http://creativecommons.org/licenses/by-nc/4.0/)
+[署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
