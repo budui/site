@@ -51,17 +51,21 @@ AutoRenderIntegrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0
     url = "/flight-rules/"
     weight = 3
 [[menu.main]]
-    name = "ABOUT"
-    url = "/about/"
-    weight = 6
+    name = "PAPER NOTES"
+    url = "/paper-notes/"
+    weight = 5
 [[menu.main]]
     name = "CATEGORIES"
     url = "/categories/"
-    weight = 4
+    weight = 8
 [[menu.main]]
     name = "TAGS"
     url = "/tags/"
-    weight = 5
+    weight = 9
+[[menu.main]]
+    name = "ABOUT"
+    url = "/about/"
+    weight = 10
 [[menu.main]]
     name = "RSS"
     url = "/index.xml"

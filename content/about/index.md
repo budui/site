@@ -1,5 +1,5 @@
 ---
-title: "ABOUT"
+title: "About"
 disableMeta: true
 ---
 
