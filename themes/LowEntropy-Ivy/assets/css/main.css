@@ -56,6 +56,10 @@ h3, h4, h5, h6 {
   text-align: left;
 }
 
+p.caption {
+  text-align: center;
+}
+
 blockquote {
   margin: 1em 0;
   padding: 0 2em;

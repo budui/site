@@ -1,4 +1,4 @@
-{{ if .Site.Params.CDN.enable }}
+{{ if and (not $.Site.IsServer) .Site.Params.CDN.enable }}
     {{ $reAltIn := "<img src=\"([^\"/]+)\" alt=\"([^\"]+)\" />" }}
     {{ $reAltOut := (printf "<img src=\"%s%s$1\" alt=\"$2\">" .Site.Params.CDN.Host .File.Dir )}}
     {{ $altContent := .Content | replaceRE $reAltIn $reAltOut | safeHTML }}
