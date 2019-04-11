@@ -1,92 +1,135 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        {{ if eq .RelPermalink "/" }}
-        <title>{{ .Site.Title }}</title>
-        <meta property="og:title" content="{{ .Site.Title }}">
-        <meta property="og:type" content="website">
-        {{ else }}
-        <title>{{ .Title }}{{ with .Params.subtitle }} - {{ . }} {{ end }} - {{ .Site.Title }}</title>
-        <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
-        {{ end }}
-        <meta name="twitter:card" content="summary">
 
-        {{ with .Description }}
-        {{ $.Scratch.Set "summary" (markdownify .) }}
-        {{ else }}
-        {{ $.Scratch.Set "summary" ((delimit (findRE "(<p.*?>(.|\n)*?</p>\\s*)+" .Content) "[&hellip;] ") | plainify | truncate (default 200 .Site.Params.summary_length) (default " &hellip;" .Site.Params.text.truncated)) }}
-        {{ end }}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ if eq .RelPermalink "/" }}
+    <title>{{ .Site.Title }}</title>
+    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta property="og:type" content="website">
+    {{ else }}
+    <title>{{ .Title }}{{ with .Params.subtitle }} - {{ . }} {{ end }} - {{ .Site.Title }}</title>
+    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+    {{ end }}
+    <meta name="twitter:card" content="summary">
 
-        {{ if eq .RelPermalink "/" }}
-        <meta property="description" content="{{ .Site.Params.description }}">
-        {{ else }}
-        {{ with ($.Scratch.Get "summary") }}
-        <meta property="description" content="{{ . }}">
-        <meta property="og:description" content="{{ . }}">
-        {{ end }}
-        {{ end }}
+    {{ with .Description }}
+    {{ $.Scratch.Set "summary" (markdownify .) }}
+    {{ else }}
+    {{ $.Scratch.Set "summary" ((delimit (findRE "(<p.*?>(.|\n)*?</p>\\s*)+" .Content) "[&hellip;] ") | plainify | truncate (default 200 .Site.Params.summary_length) (default " &hellip;" .Site.Params.text.truncated)) }}
+    {{ end }}
 
-        {{ range (findRE "<img src=\"https?://[^\"]+" .Content 1) }}
-        {{ $.Scratch.Set "autoImage" true }}
-        <meta name="twitter:image" content="{{ replaceRE "<img src=\"" "" . }}">
-        {{ end }}
-        {{ with .Site.Params.twitterImage }}
-        {{ if not ($.Scratch.Get "autoImage") }}
-        <meta name="twitter:image" content="{{ absURL . }}">
-        {{ end }}
-        {{ end }}
+    {{ if eq .RelPermalink "/" }}
+    <meta property="description" content="{{ .Site.Params.description }}">
+    {{ else }}
+    {{ with ($.Scratch.Get "summary") }}
+    <meta property="description" content="{{ . }}">
+    <meta property="og:description" content="{{ . }}">
+    {{ end }}
+    {{ end }}
 
-        {{ if .Keywords }}
-        <meta property="keywords" content ="{{ delimit .Keywords ", " }}">
-        {{ end }}
+    {{ range (findRE "<img src=\"https?://[^\"]+" .Content 1) }}
+    {{ $.Scratch.Set "autoImage" true }}
+    <meta name="twitter:image" content="{{ replaceRE "<img src=\"" "" . }}">
+    {{ end }}
+    {{ with .Site.Params.twitterImage }}
+    {{ if not ($.Scratch.Get "autoImage") }}
+    <meta name="twitter:image" content="{{ absURL . }}">
+    {{ end }}
+    {{ end }}
 
-        <link rel="canonical" href="{{ .Permalink }}">
-        <link rel="shortcut icon" href="/favicon.png">
+    {{ if .Keywords }}
+    <meta property="keywords" content="{{ delimit .Keywords ", " }}">
+    {{ end }}
+
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="shortcut icon" href="/favicon.png">
 
 
-        {{ with .OutputFormats.Get "RSS" }}
-        <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
-        {{ end }}
+    {{ with .OutputFormats.Get "RSS" }}
+    <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+    {{ end }}
 
-        {{- $main := resources.Get "css/main.css" -}}
-        {{ $fonts := resources.Get "css/fonts.css" }}
-        {{ $highlight := resources.Get "css/highlight.css" }}
-        {{ $isso := resources.Get "css/isso.css" -}}
-        {{ if .IsPage }}
+    {{- $main := resources.Get "css/main.css" -}}
+    {{ $fonts := resources.Get "css/fonts.css" }}
+    {{ $highlight := resources.Get "css/highlight.css" }}
+    {{ $isso := resources.Get "css/isso.css" -}}
+    {{ if .IsPage }}
         {{- $style := slice $main $fonts $highlight $isso | resources.Concat "/css/style.css" | minify | fingerprint -}}
         {{- with $style | minify -}}
-        <style media="screen">{{ .Content | safeCSS }}</style>
+        <style media="screen">
+            {
+                    {
+                    .Content | safeCSS
+                }
+            }
+        </style>
         {{ end }}
-        {{ else }}
+    {{ else }}
         {{- $style := slice $main $fonts | resources.Concat "/css/bare-style.css" | minify | fingerprint -}}
         {{- with $style | minify -}}
-        <style media="screen">{{ .Content | safeCSS }}</style>
+        <style media="screen">
+            {
+                    {
+                    .Content | safeCSS
+                }
+            }
+        </style>
         {{ end }}
+    {{ end }}
+    {{ if not $.Site.IsServer }}
+        {{ with .Site.GoogleAnalytics }}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', '{{ . }}');
+        </script>
         {{ end }}
-        {{ partial "head_custom.html" . }}
-    </head>
+    {{ end }}
+</head>
 
-    {{ $.Scratch.Set "section" (replaceRE "^/([^/]+)/.*" "$1" .RelPermalink) }}
-    <body class="{{ if .IsHome }}home{{ else }}{{ $.Scratch.Get "section" }}{{ end }}">
-        <header class="masthead">
-        {{ partial "tagline.html" . }}
-        {{ partial "menu.html" . }}
+{{ $.Scratch.Set "section" (replaceRE "^/([^/]+)/.*" "$1" .RelPermalink) }}
+
+<body class="{{ if .IsHome }}home{{ else }}{{ $.Scratch.Get "section" }}{{ end }}">
+    <header class="masthead">
+        <h1><a href="{{ relURL "/" }}">{{ .Site.Title }}</a></h1>
+        {{ with .Site.Params.Description }}<p class="tagline">{{ . }}</p>{{ end }}
+        <nav class="menu">
+            <input id="menu-check" type="checkbox" />
+            <label id="menu-label" for="menu-check" class="unselectable">
+                <span class="icon close-icon">✕</span>
+                <span class="icon open-icon">☰</span>
+                <span class="text">{{ .Site.Title }}</span>
+            </label>
+            <ul>
+                {{ $currentPage := . }}
+                {{ range (default .Site.Menus.main (index .Site.Menus ($.Scratch.Get "section"))) }}
+                <li{{ if eq .URL $currentPage.RelPermalink }} class="active" {{ end }} {{ if eq .URL "/" }} id="home-li"
+                    {{ end }}><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+            </ul>
+        </nav>
+    </header>
+
+    <article class="main">
+        <header class="title">
+            {{ partial "meta.html" . }}
         </header>
+        <div class="container">
+            {{ block "content" . }}{{ end }}
+        </div>
+        <footer>
+            <hr>
+            {{ partial "foot_custom.html" . }}
+            <div class="copyright"><span class="copyright">&copy; {{ .Site.LastChange.Year }}
+                    {{ .Site.Params.AuthorName }} - <a rel="license"
+                        href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></span></div>
+        </footer>
+    </article>
+</body>
 
-        <article class="main">
-            <header class="title">
-                {{ partial "meta.html" . }}
-            </header>
-            <div class="container">
-                {{ block "content" . }}{{ end }}
-            </div>
-            <footer>
-                <hr>
-                {{ partial "foot_custom.html" . }}                
-                <div class="copyright"><span class="copyright">&copy; {{ .Site.LastChange.Year }} {{ .Site.Params.AuthorName }} - <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></span></div>
-            </footer>
-        </article>
-    </body>
 </html>
