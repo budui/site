@@ -18,7 +18,10 @@ flight-rules = "/flight-rules/:year:month:day-:title/"
 [params]
   name="LowEntropy"
   AuthorName = "王不对"
-  #description = "低熵"
+  images = [
+      "https://lowentropy.me/favicon.svg",
+      "https://lowentropy.jinxiapu.cn/img/h.jpg"
+  ]
 
 [params.CDN]
 #enable = false

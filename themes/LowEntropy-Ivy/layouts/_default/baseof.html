@@ -3,16 +3,27 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="referrer" content="no-referrer">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="generator" content="{{ .Hugo.Version }}" />
+    
     {{ if eq .RelPermalink "/" }}
-    <title>{{ .Site.Title }}</title>
-    <meta property="og:title" content="{{ .Site.Title }}">
-    <meta property="og:type" content="website">
+        <title>{{ .Site.Title }}</title>
     {{ else }}
-    <title>{{ .Title }}{{ with .Params.subtitle }} - {{ . }} {{ end }} - {{ .Site.Title }}</title>
-    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+        <title>{{ .Title }}{{ with .Params.subtitle }} - {{ . }} {{ end }} - {{ .Site.Title }}</title>
     {{ end }}
-    <meta name="twitter:card" content="summary">
+    
+    {{ template "_internal/schema.html" . }}
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+    
 
     {{ with .Description }}
     {{ $.Scratch.Set "summary" (markdownify .) }}
@@ -25,17 +36,6 @@
     {{ else }}
     {{ with ($.Scratch.Get "summary") }}
     <meta property="description" content="{{ . }}">
-    <meta property="og:description" content="{{ . }}">
-    {{ end }}
-    {{ end }}
-
-    {{ range (findRE "<img src=\"https?://[^\"]+" .Content 1) }}
-    {{ $.Scratch.Set "autoImage" true }}
-    <meta name="twitter:image" content="{{ replaceRE "<img src=\"" "" . }}">
-    {{ end }}
-    {{ with .Site.Params.twitterImage }}
-    {{ if not ($.Scratch.Get "autoImage") }}
-    <meta name="twitter:image" content="{{ absURL . }}">
     {{ end }}
     {{ end }}
 
@@ -59,22 +59,14 @@
         {{- $style := slice $main $fonts $highlight $isso | resources.Concat "/css/style.css" | minify | fingerprint -}}
         {{- with $style | minify -}}
         <style media="screen">
-            {
-                    {
-                    .Content | safeCSS
-                }
-            }
+            {{ .Content | safeCSS }}
         </style>
         {{ end }}
     {{ else }}
         {{- $style := slice $main $fonts | resources.Concat "/css/bare-style.css" | minify | fingerprint -}}
         {{- with $style | minify -}}
         <style media="screen">
-            {
-                    {
-                    .Content | safeCSS
-                }
-            }
+            {{ .Content | safeCSS }}
         </style>
         {{ end }}
     {{ end }}
@@ -97,7 +89,9 @@
 <body class="{{ if .IsHome }}home{{ else }}{{ $.Scratch.Get "section" }}{{ end }}">
     <header class="masthead">
         <h1><a href="{{ relURL "/" }}">{{ .Site.Title }}</a></h1>
-        {{ with .Site.Params.Description }}<p class="tagline">{{ . }}</p>{{ end }}
+        {{ with .Site.Params.Description }}
+            <p class="tagline">{{ . }}</p>
+        {{ end }}
         <nav class="menu">
             <input id="menu-check" type="checkbox" />
             <label id="menu-label" for="menu-check" class="unselectable">
@@ -107,10 +101,11 @@
             </label>
             <ul>
                 {{ $currentPage := . }}
-                {{ range (default .Site.Menus.main (index .Site.Menus ($.Scratch.Get "section"))) }}
-                <li{{ if eq .URL $currentPage.RelPermalink }} class="active" {{ end }} {{ if eq .URL "/" }} id="home-li"
-                    {{ end }}><a href="{{ .URL }}">{{ .Name }}</a></li>
-                    {{ end }}
+                    {{ range (default .Site.Menus.main (index .Site.Menus ($.Scratch.Get "section"))) }}
+                    <li{{ if eq .URL $currentPage.RelPermalink }} class="active" {{ end }} {{ if eq .URL "/" }} id="home-li" {{ end }}>
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                {{ end }}
             </ul>
         </nav>
     </header>
@@ -125,9 +120,9 @@
         <footer>
             <hr>
             {{ partial "foot_custom.html" . }}
-            <div class="copyright"><span class="copyright">&copy; {{ .Site.LastChange.Year }}
-                    {{ .Site.Params.AuthorName }} - <a rel="license"
-                        href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></span></div>
+            <div class="copyright">
+                <span class="copyright">&copy; {{ .Site.LastChange.Year }} {{ .Site.Params.AuthorName }} - <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></span>
+            </div>
         </footer>
     </article>
 </body>
