@@ -18,6 +18,7 @@ flight-rules = "/flight-rules/:year:month:day-:title/"
 [params]
   name="LowEntropy"
   AuthorName = "王不对"
+  Description = "Output Order"
   images = [
       "https://lowentropy.me/favicon.svg",
       "https://lowentropy.jinxiapu.cn/img/h.jpg"
@@ -41,10 +42,7 @@ AutoRenderIntegrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0
 [blackfriday]
   hrefTargetBlank = true
 
-[[menu.main]]
-    name = "HOME"
-    url = "/"
-    weight = 1
+
 [[menu.main]]
     name = "BLOG"
     url = "/blog/"

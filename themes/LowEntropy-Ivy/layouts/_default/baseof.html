@@ -12,7 +12,7 @@
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     
-    <meta name="generator" content="{{ .Hugo.Version }}" />
+    <meta name="generator" content="{{ hugo.Generator }}" />
     
     {{ if eq .RelPermalink "/" }}
         <title>{{ .Site.Title }}</title>
@@ -88,21 +88,24 @@
 
 <body class="{{ if .IsHome }}home{{ else }}{{ $.Scratch.Get "section" }}{{ end }}">
     <header class="masthead">
-        <h1><a href="{{ relURL "/" }}">{{ .Site.Title }}</a></h1>
-        {{ with .Site.Params.Description }}
+        <div class="header">
+            <h1><a href="{{ relURL "/" }}">{{ .Site.Title }}</a></h1>
+            {{ with .Site.Params.Description }}
             <p class="tagline">{{ . }}</p>
-        {{ end }}
+            {{ end }}
+        </div>
+        
         <nav class="menu">
             <input id="menu-check" type="checkbox" />
             <label id="menu-label" for="menu-check" class="unselectable">
                 <span class="icon close-icon">✕</span>
                 <span class="icon open-icon">☰</span>
-                <span class="text">{{ .Site.Title }}</span>
+                <span class="text">MENU</span>
             </label>
             <ul>
                 {{ $currentPage := . }}
                     {{ range (default .Site.Menus.main (index .Site.Menus ($.Scratch.Get "section"))) }}
-                    <li{{ if eq .URL $currentPage.RelPermalink }} class="active" {{ end }} {{ if eq .URL "/" }} id="home-li" {{ end }}>
+                    <li{{ if eq .URL $currentPage.RelPermalink }} class="active" {{ end }}>
                         <a href="{{ .URL }}">{{ .Name }}</a>
                     </li>
                 {{ end }}

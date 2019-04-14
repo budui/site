@@ -56,10 +56,6 @@ h3, h4, h5, h6 {
   text-align: left;
 }
 
-p.caption {
-  text-align: center;
-}
-
 blockquote {
   margin: 1em 0;
   padding: 0 2em;
@@ -109,9 +105,6 @@ a {
   border-bottom: 1px solid;
 }
 
-a:hover {
-}
-
 sup a {
   border-bottom: none;
 }
@@ -126,10 +119,6 @@ hr {
   margin: 50px auto;
   padding: 0;
   max-width: 300px;
-}
-
-footer hr {
-  max-width: 500px;
 }
 
 .copyright {
@@ -188,10 +177,6 @@ body {
   line-height: 58px;
 }
 
-.masthead .menu li#home-li {
-  display: none;
-}
-
 .masthead h1 a {
   border-bottom: none;
 }
@@ -220,6 +205,21 @@ body {
   content: "•\00a\000a0\00a0"
 }
 
+.title h3.post-meta {
+  font-family: "Lucida Console", 'Andale Mono', 'STKaiti', 'KaiTi', 'SimKai', monospace;
+  text-align: right;
+  margin: 0px 0 20px;
+}
+
+.title h3.post-meta .tags a{
+  font-size: .8em;
+}
+
+.title h3.post-meta .category a{
+  font-size: .9em;
+}
+
+
 #menu-check {
   display: none;
 }
@@ -233,20 +233,6 @@ body {
 .main .title h1 {
   margin-top: 0;
   margin-bottom: 40px;
-}
-
-.title h3.post-meta {
-  font-family: "Lucida Console", 'Andale Mono', 'STKaiti', 'KaiTi', 'SimKai', monospace;
-  text-align: right;
-  margin: 0px 0 10px;
-}
-
-.title h3.post-meta .tags a{
-  font-size: .8em;
-}
-
-.title h3.post-meta .category a{
-  font-size: .9em;
 }
 
 .title h3 {
@@ -330,28 +316,31 @@ thead, tfoot, tr:nth-child(even) {
   .masthead {
     width: auto;
     float: none;
-    padding: 20px 0 35px;
     text-align: center;
     margin-left: 10px;
     margin-right: 10px;
+    padding: 10px 10px 45px 10px;
     border-bottom: 3px solid black;
   }
 
   .main {
     width: auto;
-    padding: 40px 10px;
+    padding: 20px 10px;
     margin-left: 0;
     border-left: none;
     min-height: auto;
   }
 
   .masthead h1 {
-    text-align: center;
-    display: none;
+    text-align: left;
+    font-size: 30px;
+    margin-bottom: 0px;
+    line-height: 40px;
   }
 
   .masthead .tagline {
-    text-align: center;
+    text-align: left;
+    margin: 0px;
   }
 
   .masthead .menu {
@@ -361,10 +350,17 @@ thead, tfoot, tr:nth-child(even) {
     margin-right: auto;
   }
 
+  .masthead #menu-label {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+  }
+
   .masthead .menu ul {
     text-align: left;
     margin: 0;
     padding: 0;
+    float: none;
   }
 
   .masthead .menu ul ul {
@@ -378,12 +374,8 @@ thead, tfoot, tr:nth-child(even) {
     padding: 0;
   }
 
-  .masthead .menu li:nth-child(2) {
+  .masthead .menu li:first-child {
     border-top: 1px solid;
-  }
-
-  .masthead .menu li#home-li {
-    display: inline;
   }
 
   .masthead .menu li li:last-child {
@@ -412,7 +404,6 @@ thead, tfoot, tr:nth-child(even) {
     display: inline-block;
     padding: 0 20px;
     height: 50px;
-    border: 1px solid;
     cursor: pointer;
     line-height: 50px;
     color: #333;
@@ -420,14 +411,6 @@ thead, tfoot, tr:nth-child(even) {
     margin-top: 10px;
   }
 
-  #menu-label:hover, #menu-label:focus {
-    border: 1px solid #888;
-  }
-
-  #menu-label .icon {
-    padding-right: 8px;
-    width: 30px;
-  }
 
   #menu-check ~ label .close-icon {
     display: none;
