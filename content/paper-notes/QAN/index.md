@@ -9,7 +9,7 @@ markup: pandoc
 | 作者 | Liu, Yu, Junjie Yan, and Wanli Ouyang |
 | 标题 | [Quality Aware Network for Set to Set Recognition](http://openaccess.thecvf.com/content_cvpr_2017/papers/Liu_Quality_Aware_Network_CVPR_2017_paper.pdf) |
 | 会议 | CVPR2017 |
-| 领域 | Set to Set Recognition  |
+| 任务 | Set to Set Recognition  |
 
 ## 介绍
 
