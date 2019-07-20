@@ -18,7 +18,7 @@ flight-rules = "/flight-rules/:year:month:day-:title/"
 [params]
   name="LowEntropy"
   AuthorName = "王不对"
-  Description = "Output Order"
+  Description = "理可顿悟，事须渐修"
   images = [
       "https://lowentropy.me/favicon.svg",
       "https://lowentropy.jinxiapu.cn/img/h.jpg"
