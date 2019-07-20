@@ -1,7 +1,6 @@
 ---
 title: "还与韶光共憔悴，不堪看"
 date: 2019-07-20T15:01:14+08:00
-draft: true
 categories:
 - 随想
 tags:
