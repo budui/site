@@ -52,7 +52,7 @@ AutoRenderIntegrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0
     url = "/flight-rules/"
     weight = 3
 [[menu.main]]
-    name = "论文"
+    name = "笔记"
     url = "/paper-notes/"
     weight = 5
 [[menu.main]]
