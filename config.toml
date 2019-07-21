@@ -1,6 +1,6 @@
 baseURL = "https://lowentropy.me/"
 languageCode = "zh-CN"
-title = "Low\nEntropy"
+title = "低熵"
 theme = "LowEntropy-Ivy"
 enableRobotsTXT = true
 hasCJKLanguage = true
@@ -44,29 +44,29 @@ AutoRenderIntegrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0
 
 
 [[menu.main]]
-    name = "BLOG"
+    name = "博客"
     url = "/blog/"
     weight = 2
 [[menu.main]]
-    name = "FLIGHT RULES"
+    name = "手册"
     url = "/flight-rules/"
     weight = 3
 [[menu.main]]
-    name = "PAPER NOTES"
+    name = "论文"
     url = "/paper-notes/"
     weight = 5
 [[menu.main]]
-    name = "CATEGORIES"
+    name = "分类"
     url = "/categories/"
     weight = 8
 [[menu.main]]
-    name = "TAGS"
+    name = "标签"
     url = "/tags/"
     weight = 9
 [[menu.main]]
-    name = "ABOUT"
+    name = "关于"
     url = "/about/"
     weight = 10
 [[menu.main]]
-    name = "RSS"
+    name = "订阅"
     url = "/index.xml"
