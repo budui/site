@@ -9,8 +9,9 @@ title: Flight Rules
 由于这些内容更新频繁，这部分内容**极易过期**。
 
 ```text
-Flight Rules are the hard-earned body of knowledge recorded in manuals that list,
-step-by-step, what to do if X occurs, and why. Essentially, they are extremely
-detailed, scenario-specific standard operating procedures.
+Flight Rules are the hard-earned body of knowledge recorded in manuals 
+that list, step-by-step, what to do if X occurs, and why. 
+Essentially, they are extremely detailed, scenario-specific standard 
+operating procedures.
 — Chris Hadfield, An Astronaut's Guide to Life.
 ```
