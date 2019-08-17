@@ -3,7 +3,9 @@
 {{ .Content }}
 <strong>精选:</strong>
 <ul>
-    {{ range (where .Data.Pages "Section" "!=" "") }}
+    {{ $pages := .Pages }}
+    {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+    {{ range (where $pages "Section" "!=" "") }}
         {{ if .Params.spotlight }}
         <li>
             <span class="date">{{ .Date.Format "2006/01/02" }}</span>
