@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="referrer" content="no-referrer">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    {{ hugo.Generator }}
+    
+    {{ if eq .RelPermalink "/" }}
+        <title>{{ .Site.Title }}</title>
+    {{ else }}
+        <title>{{ .Title }}{{ with .Params.subtitle }} - {{ . }} {{ end }} - {{ .Site.Title }}</title>
+    {{ end }}
+    
+    {{ template "_internal/schema.html" . }}
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+    
+
+    {{ with .Description }}
+    {{ $.Scratch.Set "summary" (markdownify .) }}
+    {{ else }}
+    {{ $.Scratch.Set "summary" ((delimit (findRE "(<p.*?>(.|\n)*?</p>\\s*)+" .Content) "[&hellip;] ") | plainify | truncate (default 200 .Site.Params.summary_length) (default " &hellip;" .Site.Params.text.truncated)) }}
+    {{ end }}
+
+    {{ if eq .RelPermalink "/" }}
+    <meta property="description" content="{{ .Site.Params.description }}">
+    {{ else }}
+    {{ with ($.Scratch.Get "summary") }}
+    <meta property="description" content="{{ . }}">
+    {{ end }}
+    {{ end }}
+
+    {{ if .Keywords }}
+    <meta property="keywords" content="{{ delimit .Keywords ", " }}">
+    {{ end }}
+
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+    {{ with .OutputFormats.Get "RSS" }}
+    <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+    {{ end }}
+
+    {{- $main := resources.Get "css/main.css" -}}
+    {{ $fonts := resources.Get "css/fonts.css" }}
+    {{ $highlight := resources.Get "css/highlight.css" }}
+    {{ $isso := resources.Get "css/isso.css" -}}
+    {{ if .IsPage }}
+        {{- $style := slice $main $fonts $highlight $isso | resources.Concat "/css/style.css" | minify | fingerprint -}}
+        {{- with $style | minify -}}
+        <style media="screen">
+            {{ .Content | safeCSS }}
+        </style>
+        {{ end }}
+    {{ else }}
+        {{- $style := slice $main $fonts | resources.Concat "/css/bare-style.css" | minify | fingerprint -}}
+        {{- with $style | minify -}}
+        <style media="screen">
+            {{ .Content | safeCSS }}
+        </style>
+        {{ end }}
+    {{ end }}
+    {{ if not $.Site.IsServer }}
+        {{ with .Site.GoogleAnalytics }}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', '{{ . }}');
+        </script>
+        {{ end }}
+    {{ end }}
+</head>
+
+{{ $.Scratch.Set "section" (replaceRE "^/([^/]+)/.*" "$1" .RelPermalink) }}
+
+<body class="{{ if .IsHome }}home{{ else }}{{ $.Scratch.Get "section" }}{{ end }}">
+    <header class="masthead">
+        <div class="header">
+            <h1><a href="{{ relURL "/" }}">{{ .Site.Title }}</a></h1>
+            {{ with .Site.Params.Description }}
+            <p class="tagline">{{ . }}</p>
+            {{ end }}
+        </div>
+        
+        <nav class="menu">
+            <input id="menu-check" type="checkbox" />
+            <label id="menu-label" for="menu-check" class="unselectable">
+                <span class="icon close-icon">✕</span>
+                <span class="icon open-icon">☰</span>
+                <span class="text">MENU</span>
+            </label>
+            <ul>
+                {{ $currentPage := . }}
+                    {{ range (default .Site.Menus.main (index .Site.Menus ($.Scratch.Get "section"))) }}
+                    <li{{ if eq .URL $currentPage.RelPermalink }} class="active" {{ end }}>
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
+    </header>
+
+    <article class="main">
+        <header class="title">
+            {{ partial "meta.html" . }}
+        </header>
+        <div class="container">
+            {{ block "content" . }}{{ end }}
+        </div>
+        <footer>
+            <hr>
+            {{ partial "foot_custom.html" . }}
+            <div class="copyright">
+                <span class="copyright">&copy; {{ .Site.LastChange.Year }} {{ .Site.Params.AuthorName }} - <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></span>
+            </div>
+        </footer>
+    </article>
+</body>
+
+</html>

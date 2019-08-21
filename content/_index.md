@@ -2,7 +2,7 @@
 title: Home
 ---
 
-<img src="/favicon.svg" width="150" height="150" style="width='150';height='150';float:right;"/>
+<img src="/favicon.jpg" width="150" height="150"  style="width='150';height='150';float:right;border-radius:50%;"/>
 
 > “The … ultimate purpose of life, mind, and human striving: to deploy energy and information to fight back the tide of entropy and carve out refuges of beneficial order.”
 >

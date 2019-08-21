@@ -1,7 +1,7 @@
-baseURL = "https://lowentropy.me/"
+baseURL = "https://rayhy.com/"
 languageCode = "zh-CN"
-title = "低熵"
-theme = "LowEntropy-Ivy"
+title = "RAY后院"
+theme = "ivy"
 enableRobotsTXT = true
 hasCJKLanguage = true
 paginate = 10
@@ -16,11 +16,11 @@ blog = "/blog/:year:month:day-:title/"
 flight-rules = "/flight-rules/:year:month:day-:title/"
 
 [params]
-  name="LowEntropy"
+  name="后院"
   AuthorName = "王不对"
   Description = "理可顿悟，事须渐修"
   images = [
-      "https://lowentropy.me/favicon.svg",
+      "https://rayhy.com/favicon.svg",
       "https://lowentropy.jinxiapu.cn/img/h.jpg"
   ]
 
