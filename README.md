@@ -1,7 +1,16 @@
-<h1>LowEntropy <a href='https://app.netlify.com/sites/lowentropy/deploys'><img align="right" src='https://api.netlify.com/api/v1/badges/65756fa2-7663-419c-aa49-a837b0f38eff/deploy-status'/></a>
+<h1>site <a href='https://app.netlify.com/sites/lowentropy/deploys'><img align="right" src='https://api.netlify.com/api/v1/badges/65756fa2-7663-419c-aa49-a837b0f38eff/deploy-status'/></a>
 </h1>
 
-<https://lowentropy.me> is my personal website. Visit it to kown more.
+<https://rayhy.com> is my personal website. Visit it to kown more.
+
+| Component | detail  |
+|:----:|:------------------------------------------------------------|
+| generator | [Hugo](https://gohugo.io) |
+| theme | [hugo-ivy](https://github.com/yihui/hugo-ivy) |
+| host | [Netlify](https://www.netlify.com/) |
+| image host | [Tencent COS](https://cloud.tencent.com/product/cos)  |
+| comment | [go-isso](https://github.com/budui/go-isso) |
+| license | [Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.en) |
 
 ## Deploy
 
