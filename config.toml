@@ -1,6 +1,6 @@
 baseURL = "https://rayhy.com/"
 languageCode = "zh-CN"
-title = "RAY后院"
+title = "RayHY"
 theme = "ivy"
 enableRobotsTXT = true
 hasCJKLanguage = true
@@ -18,7 +18,7 @@ flight-rules = "/flight-rules/:year:month:day-:title/"
 [params]
   Favicon = "/favicon.jpg"
   AuthorName = "王不对"
-  Description = "理可顿悟，事须渐修"
+  Description = "前进"
 
 [params.CDN]
 #enable = false
