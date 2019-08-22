@@ -3,13 +3,13 @@ publish = "public"
 command = "hugo --minify"
 
 [[redirects]]
-from = "https://lowentropy.netlify.com/*"
-to = "https://lowentropy.me/:splat"
+from = "https://rayhy.netlify.com/*"
+to = "https://rayhy.com/:splat"
 status = 301
 force = true
 
 [[redirects]]
   from = "/go-isso/*"
-  to = "https://go-isso.lowentropy.me/:splat"
+  to = "https://go-isso.rayhy.com/:splat"
   status = 200
   force = true

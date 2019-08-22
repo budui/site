@@ -1,0 +1,8 @@
+div#isso-thread .avatar>svg[data-hash="a0d752802ad5"] {
+    box-shadow:0 0 12px #b80f28;
+    border-radius:50%
+}
+
+div#isso-thread a {
+    border-bottom: none;
+}

@@ -2,12 +2,10 @@
 title: Home
 ---
 
-<img src="/favicon.svg" width="150" height="150" style="width='150';height='150';float:right;"/>
+<a href="/about/"><img src="/favicon.jpg" width=150 height=150 style="float:right;border-radius:50%;"/></a>
 
-> “The … ultimate purpose of life, mind, and human striving: to deploy energy and information to fight back the tide of entropy and carve out refuges of beneficial order.”
->
-> — Steven Pinker
+这是王不对的个人主页。
 
-物理学告诉我们，如果要让一个系统变得更有序，必须有外部能量的输入。
+`Ray`是我的英文名，`HY`是花园|后院|忽悠|Hi|洪杨:kissing_heart:|...其实并没有明确的含义。
 
-本站旨在为世界输入更多“有序”。希望我的努力能减少你的迷惑。:blush:
+这里是我精心打点的地方，欢迎你的到来。:smiling_imp:

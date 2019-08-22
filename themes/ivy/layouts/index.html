@@ -1,0 +1,27 @@
+{{ define "content" -}}
+
+{{ .Content }}
+<strong>精选:</strong>
+<ul>
+    {{ $pages := .Pages }}
+    {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+    {{ range (where $pages "Section" "!=" "") }}
+        {{ if .Params.spotlight }}
+        <li>
+            <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+    {{ end }}
+</ul>
+
+
+<strong>分类:</strong>
+<p></p>
+{{ range  $tagName, $taxonomy := .Site.Taxonomies.categories  }}
+{{ with $.Site.GetPage (printf "%s/%s" "categories" $tagName) }}
+<a href="{{ .Permalink }}">{{ $tagName }}</a>({{ len $taxonomy }})
+{{ end }}
+{{ end }}
+<p><strong><a href="/blog/">博客</a> 和 <a href="/flight-rules/">手册</a> 中还有很多文章✨</strong></p>
+{{- end }}

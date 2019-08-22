@@ -1,0 +1,50 @@
+
+{{/* This partial was derived from the conversations in and around
+     https://github.com/gohugoio/hugo/issues/1778 -- most directly skyzyx's
+     gist; https://gist.github.com/skyzyx/a796d66f6a124f057f3374eff0b3f99a
+     https://gist.github.com/pyrrho/1d77cdb98ba58c7547f2cdb3fb325c62
+*/}}
+
+{{/* Minimum heading level to include; default is h2. */}}
+{{- $minLevel := 2 -}}
+{{/* Minimum heading level to include; default is h4. */}}
+{{- $maxLevel := 4 -}}
+{{/* Search for headers as specified by $minLevel and $maxLevel, ignoring those
+     that contain no text (ex; "<h2></h2>" will be ignored).
+*/}}
+{{- $regex := printf "<h[%d-%d].*?>(.|\n])+?</h[%d-%d]>" $minLevel $maxLevel $minLevel $maxLevel -}}
+{{- $headers := findRE $regex .Content -}}
+
+{{/*- Skip generation if there are no (suitable) headers. */}}
+{{- $hasHeaders := ge (len $headers) 1 -}}
+{{- if $hasHeaders -}}
+  {{- .Scratch.Set "toc__last-level" (sub $minLevel 1) -}}
+  {{- range $header := $headers -}}
+    {{- $headerLevel := substr $header 2 1 | int -}}
+    {{- $headerID    := index (findRE "id=.([\u4e00-\u9fa5_a-zA-Z0-9-])*" $header) 0 | after 4 -}}
+    {{- $headerText  := index (findRE ">[^<]*" $header) 0 | after 1 | htmlUnescape -}}
+    {{- $lastLevel := $.Scratch.Get "toc__last-level" -}}
+    {{- $href := printf "#%s" $headerID -}}
+    {{- $levelSeq := seq $lastLevel $headerLevel | after 1 -}}
+    {{- $.Scratch.Set "toc__last-level" $headerLevel -}}
+
+    {{- if gt $headerLevel $lastLevel -}}
+      {{- range $l := $levelSeq -}}
+        <ul class="table-of-contents__h{{ $l }}" ><li>
+      {{- end -}}
+    {{- else if lt $headerLevel $lastLevel -}}
+      {{- range $l := $levelSeq -}}
+        </li></ul>
+      {{- end -}}
+      </li><li>
+    {{- else -}}
+      </li><li>
+    {{- end -}}
+    <a href="{{ $href }}">{{ $headerText }}</a>
+  {{- end -}}
+
+  {{/* We end  */}}
+  {{- range seq ($.Scratch.Get "toc__last-level") (sub $minLevel 1) | after 1 -}}
+    </li></ul>
+  {{- end -}}
+{{- end -}}

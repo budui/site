@@ -1,0 +1,30 @@
+    {{- if false | default true -}}
+    <div id="isso-thread"></div>
+        {{ $Title := .Title }}
+        {{ with .Page.Site.Params.comments.isso.Host }}
+    <script data-isso="{{ . }}" 
+        data-title="{{ $Title }} - LowEntorpy"
+        data-isso-css="true"
+        data-isso-lang="zh_CN"
+        data-isso-reply-to-self="false"
+        data-isso-reply-notifications="true"
+        data-isso-require-author="true" 
+        data-isso-require-email="true"
+        data-isso-vote="true" src="{{ . }}js/embed.min.js"></script>
+        {{ end }}
+    {{ end }}
+
+    {{- if (and .IsPage (eq .Params.markup "pandoc" ) ) -}}
+    <link rel="stylesheet" href="{{ .Page.Site.Params.katex.base }}katex.min.css" integrity="{{ .Page.Site.Params.katex.CSSIntegrity }}" crossorigin="anonymous">
+    <script defer src="{{ .Page.Site.Params.katex.base }}katex.min.js" integrity="{{ .Page.Site.Params.katex.JSIntegrity }}" crossorigin="anonymous"></script>
+    <script defer src="{{ .Page.Site.Params.katex.base }}contrib/auto-render.min.js" integrity="{{ .Page.Site.Params.katex.AutoRenderIntegrity }}" crossorigin="anonymous"
+    onload="renderMathInElement(document.querySelector('.container'));"></script>
+    {{- end -}}
+
+    <script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+    {{ with resources.Get "js/center-img.js" | minify }}
+    <script>
+        {{ .Content | safeJS }}
+    </script>
+    {{ end }}

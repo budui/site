@@ -84,7 +84,7 @@ enable = true
 Host = "https://lowentropy.jinxiapu.cn/img/"
 ```
 
-图片的src就由`test.jpg`被替换为`https://lowentropy.jinxiapu.cn/img/{{ .Dir }}/test.jpg`，这里的{{ .Dir }}是Markdown文件相对于content文件夹的地址。可以按照自己的喜好更改。拿我[上一篇博客](https://lowentropy.me/blog/20190223-reid%E4%BB%BB%E5%8A%A1%E4%B8%AD%E7%9A%84cmc%E5%92%8Cmap/)做个参考：
+图片的src就由`test.jpg`被替换为`https://lowentropy.jinxiapu.cn/img/{{ .Dir }}/test.jpg`，这里的{{ .Dir }}是Markdown文件相对于content文件夹的地址。可以按照自己的喜好更改。拿我[上一篇博客](https://rayhy.com/blog/20190223-reid%E4%BB%BB%E5%8A%A1%E4%B8%AD%E7%9A%84cmc%E5%92%8Cmap/)做个参考：
 
 Markdown中引用图片代码为`![re-id](ranked_results.jpg)`，如果直接用`{{.Content}}`，会得到
 
