@@ -10,7 +10,7 @@
     <meta name="force-rendering" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Cache-Control" content="no-transform">
-    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
     {{ hugo.Generator }}
     
     {{ if eq .RelPermalink "/" }}
@@ -43,7 +43,7 @@
     {{ end }}
 
     <link rel="canonical" href="{{ .Permalink }}">
-    <link rel="shortcut icon" href="/favicon.jpg">
+    <link rel="shortcut icon" href="{{ .Site.Params.Favicon }}">
 
 
     {{ with .OutputFormats.Get "RSS" }}
@@ -104,7 +104,7 @@
             <ul>
                 {{ $currentPage := . }}
                     {{ range (default .Site.Menus.main (index .Site.Menus ($.Scratch.Get "section"))) }}
-                    <li{{ if eq .URL $currentPage.RelPermalink }} class="active" {{ end }}>
+                    <li {{ if eq .URL $currentPage.RelPermalink }} class="active" {{ end }}>
                         <a href="{{ .URL }}">{{ .Name }}</a>
                     </li>
                 {{ end }}

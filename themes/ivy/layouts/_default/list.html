@@ -3,7 +3,10 @@
 {{ .Content }}
 
 <ul>
-  {{ range (where .Data.Pages "Section" "!=" "") }}
+  {{- $pctx := . -}}
+  {{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+  {{- $pages := $pctx.RegularPages -}}
+  {{ range (where $pages "Section" "!=" "") }}
   <li>
     <span class="date">{{ .Date.Format "2006/01/02" }}</span>
     <a href="{{ .Permalink }}">{{ .Title }}</a>

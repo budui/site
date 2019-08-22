@@ -16,13 +16,9 @@ blog = "/blog/:year:month:day-:title/"
 flight-rules = "/flight-rules/:year:month:day-:title/"
 
 [params]
-  name="后院"
+  Favicon = "/favicon.jpg"
   AuthorName = "王不对"
   Description = "理可顿悟，事须渐修"
-  images = [
-      "https://rayhy.com/favicon.svg",
-      "https://lowentropy.jinxiapu.cn/img/h.jpg"
-  ]
 
 [params.CDN]
 #enable = false
