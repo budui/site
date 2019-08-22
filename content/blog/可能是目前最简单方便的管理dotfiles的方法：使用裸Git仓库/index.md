@@ -1,6 +1,7 @@
 ---
 title: "可能是目前最简单方便的管理dotfiles的方法：使用裸Git仓库"
 date: 2019-07-08T14:12:18+08:00
+spotlight: true
 categories:
 - 技术
 tags:

@@ -45,7 +45,7 @@ description: 写在读《中国互联网二十年：自由的向往，信任的�
 
 令我感到惊奇的是，在选择服务时，国内外的网民对隐私的重视程度有很大的区别。国外带`privacy focused`标签的软件总是比别的软件多几分优势。而周围很多人对隐私的态度，还真应了李彦宏的那句 *中国人更开放，愿用隐私换效率* 。这样不好，具体的劝诫以后再表达，我只是想让这些人知道，你不在乎，有人在乎，而且他们目前也在为你的隐私权而战斗。
 
-你所在的网站<https://LowEntropy.me>同样也是`privacy focused`。评论系统采用isso，只会在你编写新评论后维持一个几分钟的cookie来让你拥有编辑评论的权力。然后就没有任何cookie种在你的浏览器里了。网页浏览统计我使用[fathom](https://usefathom.com/)，特点比较鲜明：**Fathom Analytics provides simple, useful websites stats without tracking or storing personal data of your users.**
+你所在的网站<https://rayhy.com>同样也是`privacy focused`。评论系统采用isso，只会在你编写新评论后维持一个几分钟的cookie来让你拥有编辑评论的权力。然后就没有任何cookie种在你的浏览器里了。网页浏览统计我使用[fathom](https://usefathom.com/)，特点比较鲜明：**Fathom Analytics provides simple, useful websites stats without tracking or storing personal data of your users.**
 
 除了隐私上的斗争，大公司和网民之间还有一个永远的斗争主题：中心化（平台化）与去中性化的斗争。大公司们希望所有用户绑定在自己平台上，而很多情况下，你我厌恶垄断喜欢竞争。关于这一点，我向大家推荐一个文章：[《为什么我不在微信公众号上写文章》](https://coolshell.cn/articles/17391.html)；介绍一个人：[Aaron Swartz](https://zh.wikipedia.org/zh/%E4%BA%9A%E4%BC%A6%C2%B7%E6%96%AF%E6%B2%83%E8%8C%A8)。我的想法大家看了这一文一人就显而易见了。
 
