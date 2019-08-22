@@ -1,5 +1,6 @@
-<h1>site <a href='https://app.netlify.com/sites/lowentropy/deploys'><img align="right" src='https://api.netlify.com/api/v1/badges/65756fa2-7663-419c-aa49-a837b0f38eff/deploy-status'/></a>
-</h1>
+# site
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/65756fa2-7663-419c-aa49-a837b0f38eff/deploy-status)](https://app.netlify.com/sites/rayhy/deploys)
 
 <https://rayhy.com> is my personal website. Visit it to kown more.
 
