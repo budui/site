@@ -5,10 +5,18 @@ disableMeta: true
 
 ## 关于我自己
 
-可以叫我王不对，目前在[HUST-AIA](http://aia.hust.edu.cn/)读研，研究方向为行人姿态迁移、行人重识别。除了计算机视觉，我还对后端很感兴趣。
-日常使用Python/Golang。
+可以叫我王不对，目前在[HUST-AIA](http://aia.hust.edu.cn/)读研，研究方向为行人姿态迁移、行人重识别。除了计算机视觉，我还对后端很感兴趣。日常使用Python/Golang。
 
-我写字很丑，不会背诗，但会吐槽（[Twitter](https://twitter.com/wangbudui)），会写代码（[GitHub](https://github.com/budui/)）。
+我写字很丑但懒得练，不会背诗但羡慕善用诗者，堪比叶公好龙，正是“不对好诗”。
+
+偶尔吐槽（[Twitter](https://twitter.com/wangbudui)），偶尔编码（[GitHub](https://github.com/budui/)）。
+
+目前对各种宏大的话题（如政治，人权）认知都不是很明确，不稳定，处在矛盾期。但不管如何变化，都会遵守两个原则：
+
+1. 首先做一个人；
+2. 忠于自己的屁股。
+
+原则一高于原则二。
 
 我的邮箱是<a href="#" class="cryptedmail"
    data-name="wangbudui"
