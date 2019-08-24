@@ -10,6 +10,7 @@ pygmentsUseClasses = true
 googleAnalytics = "UA-120056178-1"
 footnotereturnlinkcontents = "↩"
 enableEmoji = true
+disqusShortname = "rayhy"
 
 [permalinks]
 blog = "/blog/:year:month:day-:title/"
