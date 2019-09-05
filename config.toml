@@ -45,13 +45,17 @@ AutoRenderIntegrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0
     url = "/blog/"
     weight = 2
 [[menu.main]]
-    name = "手册"
+    name = "飞行手册"
     url = "/flight-rules/"
     weight = 3
 [[menu.main]]
-    name = "笔记"
+    name = "论文笔记"
     url = "/paper-notes/"
     weight = 5
+[[menu.main]]
+    name = "只言片语"
+    url = "/quote/"
+    weight = 6
 [[menu.main]]
     name = "关于"
     url = "/about/"
