@@ -20,6 +20,7 @@ flight-rules = "/flight-rules/:year:month:day-:title/"
   Favicon = "/favicon.jpg"
   AuthorName = "王不对"
   Description = "前进"
+  Footer = "© 2019 王不对 - **[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)** - **[RSS](/index.xml)**"
 
 [params.CDN]
 #enable = false
@@ -47,7 +48,7 @@ AutoRenderIntegrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0
 [[menu.main]]
     name = "飞行手册"
     url = "/flight-rules/"
-    weight = 3
+    weight = 4
 [[menu.main]]
     name = "论文笔记"
     url = "/paper-notes/"
@@ -59,7 +60,4 @@ AutoRenderIntegrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0
 [[menu.main]]
     name = "关于"
     url = "/about/"
-    weight = 10
-[[menu.main]]
-    name = "订阅"
-    url = "/index.xml"
+    weight = 3
