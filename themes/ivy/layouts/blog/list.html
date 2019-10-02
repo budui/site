@@ -1,0 +1,106 @@
+{{ define "content" -}}
+
+{{ .Content }}
+
+<style>
+    .post-categories {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+   }
+    .post-categories li {
+        font-size: 14px;
+        float: left;
+        margin-right: 10px;
+   }
+    @media screen and (max-width: 768px) {
+        .post-categories li {
+            margin-top: 5px;
+       }
+   }
+    .post-date {
+        margin-right: 10px;
+        color: #555;
+   }
+    .post-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+   }
+    .post-link {
+        text-decoration: none;
+   }
+    .posts, .post-container {
+        list-style-type: none;
+        margin: 45px 30px;
+   }
+    @media screen and (max-width: 480px) {
+        .posts, .post-container {
+            margin-left: 20px;
+            margin-right: 20px;
+       }
+   }
+    @media screen and (max-width: 768px) {
+        .posts, .post-container {
+            padding: 0 !important;
+            margin-top: 0;
+       }
+   }
+    .post-container {
+        padding-left: 40px;
+   }
+   
+    .post a {
+        color: #0a59b0;
+        text-decoration: none;
+        transition: border-bottom 0.4s;
+   }
+    .post a:hover {
+        border-bottom: 0.5px solid #0a59b0;
+   }
+    #posts-label {
+        border-bottom: 1px solid #eee;
+        font-size: 15px;
+        color: #777;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding-bottom: 10px;
+        font-weight: normal;
+   }
+    
+</style>
+
+<ul class="blog" style="list-style-type:none" >
+    {{- $pctx := . -}}
+    {{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+    {{- $pages := $pctx.RegularPages -}}
+
+    {{ range (where $pages "Section" "!=" "") }}
+    <li>
+        <a class="post-link" href="{{ .Permalink }}">
+            <h2 class="post-title">{{ .Title }}</h2>
+        </a>
+        <div class="post-meta">
+            {{ with .Params.tags }}
+            <ul class="post-categories">
+                {{ range . }}
+                <li><a style="border-bottom:none" href="{{ (urlize (printf "tags/%s/" . )) | absLangURL }}">#{{ . }}</a></li>
+                {{ end }}
+            </ul>
+            {{ end }}
+            <div class="post-date"><i class="icon-calendar"></i>{{ .Date.Format "2006/01/02" }}</div>
+        </div>
+        <div class="post">
+            {{ if .Description }}
+                {{ .Description | markdownify }}
+            {{ else }}
+                {{ if .Truncated }}
+                    {{ .Summary | truncate 150 | markdownify }}...
+                {{ end }}
+            {{ end }}
+        </div>
+    </li>
+    {{ end }}
+</ul>
+
+{{- end }}

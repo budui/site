@@ -1,4 +1,5 @@
-{{ if not .IsHome }}
+{{ if not .IsHome  }}
+{{ if .IsPage }}
 <h3 class="post-meta">
     {{ with .Params.categories }}
     <span itemprop="articleSection" class="category">
@@ -16,9 +17,9 @@
     </span>
     {{ end }}
 </h3>
-
-
+{{ end }}
 <h1>{{ .Title }}</h1>
+
 {{ if .IsPage }}
 <h3>
     {{ if not .Params.disableMeta }}
