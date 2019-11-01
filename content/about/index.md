@@ -32,5 +32,5 @@ disableMeta: true
 | 主题  | [hugo-ivy](https://github.com/yihui/hugo-ivy) - 魔改过的、[谢益辉](https://yihui.name)随手写的主题       |
 | 托管  | [Netlify](https://www.netlify.com/) - Everything you need to build fast, modern websites                 |
 | 图床  | [腾讯云 COS](https://cloud.tencent.com/product/cos) - 安全稳定、海量、便捷、低延迟、低成本的云端存储服务 |
-| 评论  | **暂时用Disqus** 不断更新中的[go-isso](https://github.com/budui/go-isso) - 我使用Golang重写的isso        |
+| 评论  | **暂时用isso** 不断更新中的[go-isso](https://github.com/budui/go-isso) - 我使用Golang重写的isso        |
 | 协议  | [署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)      |
