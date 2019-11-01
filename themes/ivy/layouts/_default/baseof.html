@@ -120,11 +120,11 @@
             {{ block "content" . }}{{ end }}
         </div>
         <hr>
-        {{- if false | default true -}}
+        {{- if (and .IsPage .Params.comment | default true ) -}}
         <div id="isso-thread"></div>
             {{ $Title := .Title }}
             {{ with .Page.Site.Params.comments.isso.Host }}
-        <script data-isso="{{ . }}" 
+        <script data-isso="{{ . }}"
             data-title="{{ $Title }} - LowEntorpy"
             data-isso-css="true"
             data-isso-lang="zh_CN"
@@ -135,11 +135,6 @@
             data-isso-vote="true" src="{{ . }}js/embed.min.js"></script>
             {{ end }}
         {{ end }}
-    
-        
-        {{- if (and .IsPage .Params.comment | default true ) -}}
-        {{ template "_internal/disqus.html" . }}
-        {{- end -}}
     </article>
     <footer>
         
