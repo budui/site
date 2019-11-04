@@ -87,14 +87,14 @@
 
 <body class="{{ if .IsHome }}home{{ else }}{{ $.Scratch.Get "section" }}{{ end }}">
     <header class="masthead">
-        <div class="header">
+        <div class="header font-hei">
             <h1><a href="{{ relURL "/" }}">{{ .Site.Title }}</a></h1>
             {{ with .Site.Params.Description }}
             <p class="tagline">{{ . }}</p>
             {{ end }}
         </div>
         
-        <nav class="menu">
+        <nav class="menu font-hei">
             <input id="menu-check" type="checkbox" />
             <label id="menu-label" for="menu-check" class="unselectable">
                 <span class="icon close-icon">✕</span>
@@ -112,7 +112,7 @@
         </nav>
     </header>
 
-    <article class="main">
+    <article class="main {{ if in .Params.categories .Page.Site.Params.LiteraryCategories }}font-song{{ else }}font-hei{{ end }}">
         <header class="title">
             {{ partial "meta.html" . }}
         </header>
