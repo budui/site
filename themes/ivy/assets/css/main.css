@@ -166,6 +166,10 @@ body {
   min-height: calc(100vh - 60px);
 }
 
+.main .container {
+  font-size: 1.2em;
+}
+
 /* Masthead */
 
 .masthead h1 {
