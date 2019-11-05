@@ -65,7 +65,7 @@ blockquote {
 /* Code */
 
 pre, code {
-  font-size: .9em;
+  font-size: 1em;
 }
 
 pre code {
@@ -468,7 +468,7 @@ thead, tfoot, tr:nth-child(even) {
   }
 
   pre, code {
-    font-size: 12px;
+    font-size: 1em;
   }
 
   .masthead {
