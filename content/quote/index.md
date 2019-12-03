@@ -14,3 +14,6 @@ disableMeta: true
 
 > Reading code is more important than writing code because software systems spend the majority of their lifetimes after launch, and change happens.
 
+**[如何评价华为回应李洪元被羁押 251天：支持其运用法律武器维权？](https://www.zhihu.com/question/358967893/answer/920062065)** - *godking*
+
+> 这事上我挺佩服华为的。因为从前有人作恶，无非就是胆大包天，觉得能逃脱公权力的审判。就算官商勾结一手遮天，那也只能偷偷的进行。比如邓世平案，一旦被巡视组发现，也不可避免的东窗事发。华为就不一样，它能向全国人民公开自己的行为。能接受任何权力的监督。它明确的告诉了全国人民一个事实:这个国家到底是谁当家作主。这个国家到底是谁的国家。就凭这份坦诚，这份教育意义。我代表全体中国人谢谢华为了。
