@@ -22,7 +22,8 @@ flight-rules = "/flight-rules/:year:month:day-:title/"
   Description = "前进"
   Footer = "© 2019 王不对 - **[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)** - **[RSS](/index.xml)**"
   LiteraryCategories = "随想"
-
+[markup]
+  defaultMarkdownHandler = "blackfriday"
 [params.CDN]
 #enable = false
 enable = true
