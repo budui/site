@@ -1,6 +1,6 @@
-baseURL = "https://rayhy.com/"
+baseURL = "https://wrong.wang/"
 languageCode = "zh-CN"
-title = "RayHY"
+title = "Wrong.Wang"
 theme = "ivy"
 enableRobotsTXT = true
 hasCJKLanguage = true
@@ -10,7 +10,6 @@ pygmentsUseClasses = true
 googleAnalytics = "UA-120056178-1"
 footnotereturnlinkcontents = "↩"
 enableEmoji = true
-disqusShortname = "rayhy"
 
 [permalinks]
 blog = "/blog/:year:month:day-:title/"
@@ -23,7 +22,22 @@ flight-rules = "/flight-rules/:year:month:day-:title/"
   Footer = "© 2019 王不对 - **[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)** - **[RSS](/index.xml)**"
   LiteraryCategories = "随想"
 [markup]
-  defaultMarkdownHandler = "blackfriday"
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xHTML = false
 [params.CDN]
 #enable = false
 enable = true

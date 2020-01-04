@@ -1,114 +1,3 @@
-/* Micro Reset */
-
-html {
-  font-size: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-button, input, select, textarea, label {
-  margin: 0;
-  padding: 0;
-  font-family: inherit;
-  font-size: inherit;
-}
-
-img {
-  max-width: 100%;
-}
-
-/* Typography */
-
-body {
-  line-height: 1.75;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  padding: 0;
-  margin: 60px 0 30px;
-  line-height: 1.25;
-  text-align: center;
-}
-
-h1 {
-  font-size: 32px;
-  font-weight: normal;
-}
-
-h2 {
-  font-size: 22px;
-  font-weight: bold;
-}
-
-h3, h4, h5, h6 {
-  font-size: 19px;
-  font-weight: bold;
-  text-align: left;
-}
-
-blockquote {
-  margin: 1em 0;
-  padding: 0 2em;
-  border-left: 3px solid #ddd;
-}
-
-/* Code */
-
-pre, code {
-  font-size: 0.85em;
-}
-
-pre code {
-  display: block;
-  border: 1px solid #ddd;
-  box-shadow: 5px 5px 5px #eee;
-  padding: 1em;
-  overflow-x: auto;
-  line-height: 1.75;
-}
-
-code {
-  background: #f9f9f9;
-}
-
-pre code {
-  background: none;
-}
-
-/* Lists */
-
-ul, ol {
-  padding: 0 0 0 20px;
-}
-
-li {
-  margin: 4px 0;
-  padding: 0;
-}
-
-/* Links */
-
-a {
-  color: black;
-  text-decoration: none;
-  padding-bottom: 2px;
-  border-bottom: 1px solid;
-}
-
-sup a {
-  border-bottom: none;
-}
-
 /* Miscellanea */
 
 hr {
@@ -177,7 +66,7 @@ body {
   margin-bottom: 34px;
   padding: 0;
   text-align: right;
-  font-size: 46px;
+  /* font-size: 46px; */
   line-height: 58px;
 }
 
@@ -252,26 +141,6 @@ body {
 
 .footnotes {
   font-size: .9em;
-}
-
-/* Tables */
-
-table {
-  margin: auto;
-  border-top: 1px solid #666;
-  border-bottom: 1px solid #666;
-}
-
-table thead th {
-  border-bottom: 1px solid #666;
-}
-
-th, td {
-  padding: 5px;
-}
-
-thead, tfoot, tr:nth-child(even) {
-  background: #f8f8f8;
 }
 
 /**
@@ -450,33 +319,7 @@ thead, tfoot, tr:nth-child(even) {
 /* Portrait phone screens */
 
 @media screen and (max-width: 480px) {
-
-  body {
-    font-size: 16px;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  h3, h4, h5, h6 {
-    font-size: 16px;
-  }
-
-  pre, code {
-    font-size: 1em;
-  }
-
   .masthead {
     padding-top: 0;
   }
-
-}
-
-.cryptedmail:after {
-  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld); 
 }

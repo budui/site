@@ -50,25 +50,14 @@
     <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
     {{ end }}
 
-    {{- $main := resources.Get "css/main.css" -}}
-    {{ $fonts := resources.Get "css/fonts.css" }}
-    {{ $highlight := resources.Get "css/highlight.css" }}
-    {{ $isso := resources.Get "css/isso.css" -}}
-    {{ if .IsPage }}
-        {{- $style := slice $main $fonts $highlight $isso | resources.Concat "/css/style.css" | minify | fingerprint -}}
-        {{- with $style | minify -}}
-        <style media="screen">
-            {{ .Content | safeCSS }}
-        </style>
-        {{ end }}
-    {{ else }}
-        {{- $style := slice $main $fonts | resources.Concat "/css/bare-style.css" | minify | fingerprint -}}
-        {{- with $style | minify -}}
-        <style media="screen">
-            {{ .Content | safeCSS }}
-        </style>
-        {{ end }}
-    {{ end }}
+    {{- $sitecss := resources.Get "css/site.css" -}}
+    {{ $fontscss := resources.Get "css/fonts.css" }}
+    {{ $highlightcss := resources.Get "css/highlight.css" }}
+    {{ $issocss := resources.Get "css/isso.css" -}}
+    {{ $markdowncss := resources.Get "css/markdown.css" }}
+    {{ $cryptedmailcss := resources.Get "css/cryptedmail.css" -}}
+    {{- $style := slice $sitecss $fontscss $highlightcss $issocss $markdowncss $cryptedmailcss | resources.Concat "/css/style.css" | minify | fingerprint -}}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
     {{ if not $.Site.IsServer }}
         {{ with .Site.GoogleAnalytics }}
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -125,7 +114,6 @@
             {{ $Title := .Title }}
             {{ with .Page.Site.Params.comments.isso.Host }}
         <script data-isso="{{ . }}"
-            data-title="{{ $Title }} - LowEntorpy"
             data-isso-css="true"
             data-isso-lang="zh_CN"
             data-isso-reply-to-self="false"
