@@ -3,8 +3,8 @@ publish = "public"
 command = "hugo --minify"
 
 [[redirects]]
-from = "https://rayhy.netlify.com/*"
-to = "https://rayhy.com/:splat"
+from = "https://rayhy.com/*"
+to = "https://wrong.wang/:splat"
 status = 301
 force = true
 
